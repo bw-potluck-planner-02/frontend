@@ -11,17 +11,16 @@ function App() {
       <div>
         <h1>Potluck Planner</h1>
 
-        <Route path="/login" component={Login}>
+        <Route path="/login" component={Login} />
           <Login />
-        </Route>
-
-        <Route path="/register" component={Registration}>
+      
+        <Route path="/register" component={Registration} />
           <Registration />
-        </Route>
+    
 
-        <Route path='/potluck'>
+        <Route path='/potluck' />
           <Potluck />
-        </Route>
+          <Route exact path="/" component={Login} />
       </div>
     </Router>
   );
