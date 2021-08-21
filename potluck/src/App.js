@@ -1,17 +1,29 @@
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Potluck from "./components/Potluck";
 
-import './App.css';
+import Login from "./components/Login";
+import Registration from "./components/Registration";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <Router>
+      <div>
+        <h1>Potluck Planner</h1>
 
-      </header>
-    </div>
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/register">
+          <Registration />
+        </Route>
+
+        <Route path='/potluck'>
+          <Potluck />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
