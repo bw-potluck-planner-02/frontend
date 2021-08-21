@@ -11,7 +11,7 @@ function App() {
       <div>
         <h1>Potluck Planner</h1>
 
-        <Route path="/login">
+        <Route path="/login" component={Login}>
           <Login />
         </Route>
 
