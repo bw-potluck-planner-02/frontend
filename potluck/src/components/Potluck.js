@@ -23,7 +23,7 @@ const Potluck = () => {
 
     const formSubmit = evt => {
         evt.preventDefault();
-        console.log('Form Submitted');
+        console.log('Form Submitted!');
         /* this will need to be updated to the actual api*/
         axios.post('http://localhost:5000/api/', formState)
         .then(res => {
