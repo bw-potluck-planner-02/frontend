@@ -18,7 +18,7 @@ function App() {
           <h1>Potluck Planner</h1>
           <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
         </header>
-        {/* <Switch> */}
+        <Switch>
         <PrivateRoute exact path='/potluck' component={Potluck} />
         <Route path="/register" component={Registration} />
         <Route path="/login" component={Login} />
@@ -27,7 +27,7 @@ function App() {
           {/* <Registration /> */}
           <Potluck />
           {/* <Login /> */}
-        {/* </Switch> */}
+        </Switch>
       </div>
     </Router>
   );
