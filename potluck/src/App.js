@@ -4,6 +4,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
+// import DashboardPage from "./components/Dashboard"
 
 const logout = () => {
   localStorage.removeItem("token");
@@ -19,13 +20,18 @@ function App() {
           <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
         </header>
         <Switch>
-        <PrivateRoute exact path='/potluck' component={Potluck} />
+        {/* <PrivateRoute path="/dashboard">
+          <DashboardPage />
+          </PrivateRoute> */}
+        <PrivateRoute path='/potluck'>
+        <Potluck />
+        </PrivateRoute>
         <Route path="/register" component={Registration} />
         <Route path="/login" component={Login} />
           
           <Route exact path="/" component={Login} />
           {/* <Registration /> */}
-          <Potluck />
+          
           {/* <Login /> */}
         </Switch>
       </div>
