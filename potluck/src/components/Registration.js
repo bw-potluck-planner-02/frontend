@@ -3,55 +3,55 @@ import React, { useState } from "react";
 // import { userRegistration } from "../api/actions";
 
 const Registration = (props) => {
-  const [user, setUser] = useState({
-    username: "",
-    name: "",
-    password: "",
-  });
-
-  const onInputChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
+    const [user, setUser] = useState({
+        username: "",
+        name: "",
+        password: "",
     });
-  };
 
-  const formSubmit = (e) => {
-    e.preventDefault();
-    // passes user state to actions.js
-    // props.userRegistration(user);
-  };
+    const onInputChange = (e) => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-  return (
-    <form onSubmit={formSubmit}>
-      <h2>Create An Account</h2>
-      <label htmlFor="username">Username:</label>
-      <input
-        id="username"
-        type="text"
-        name="username"
-        onChange={onInputChange}
-        maxLength="30"
-      />
-      <label htmlFor="name">Name:</label>
-      <input
-        id="name"
-        type="text"
-        name="name"
-        onChange={onInputChange}
-        maxLength="30"
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        id="password"
-        type="password"
-        name="password"
-        onChange={onInputChange}
-        maxLength="30"
-      />
-      <button>Sign Up</button>
-    </form>
-  );
+    const formSubmit = (e) => {
+        e.preventDefault();
+        // passes user state to actions.js
+        // props.userRegistration(user);
+    };
+
+    return (
+        <form onSubmit={formSubmit}>
+            <h2>Create An Account</h2>
+            <label htmlFor="username">Username:</label>
+            <input
+                id="username"
+                type="text"
+                name="username"
+                onChange={onInputChange}
+                maxLength="30"
+            />
+            <label htmlFor="name">Name:</label>
+            <input
+                id="name"
+                type="text"
+                name="name"
+                onChange={onInputChange}
+                maxLength="30"
+            />
+            <label htmlFor="password">Password:</label>
+            <input
+                id="password"
+                type="password"
+                name="password"
+                onChange={onInputChange}
+                maxLength="30"
+            />
+            <button>Sign Up</button>
+        </form>
+    );
 };
 
 // const mapStateToProps = (state) => {
