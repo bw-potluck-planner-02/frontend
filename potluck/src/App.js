@@ -15,7 +15,7 @@ function App() {
           <Login />
         </Route>
 
-        <Route path="/register">
+        <Route path="/register" component={Registration}>
           <Registration />
         </Route>
 
