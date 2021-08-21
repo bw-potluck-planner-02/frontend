@@ -1,41 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from 'axios';
 
-function Login() {
-    const [user, setUser] = useState({ username: '', password: '' });
 
-    const handleLoginChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value })
-    }
+const Login = (props) => {
+    const [credentials, setCredentials] = useState({ username: "", password: "" })
+    const [error, setError] = useState("");
 
-    const handleLoginSubmit = (e) => {
-        e.preventDefault()
-    }
+    const handleChange = e => {
+        setCredentials({
+            ...credentials,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const submit = e => {
+        e.preventDefault();
+        if (!credentials.username || !credentials.password) {
+            return (setError("Username or Password not valid."));
+        }
+
+        axios.post('http://localhost:5000/api/login', credentials)
+            .then(res => {
+                localStorage.setItem("token", res.data.payload);
+                props.history.push('/potluck');
+            })
+            .catch(err => {
+                setError("Error logging in");
+            })
+    };
 
     return (
         <div>
-            <h2>LogIn</h2>
-            <form onSubmit={handleLoginSubmit}>
-                <label htmlFor='username'>Username</label>
-                <input
-                    id='username'
-                    value={user.username}
-                    name='username'
-                    onChange={handleLoginChange}
-                />
+            <h1>Welcome to Potluck Planner</h1>
+            <div data-testid="loginForm" className="login-form">
+                <form onSubmit={submit}>
+                    <label >Username:</label>
+                    <input
+                        id="username"
+                        data-testid="username"
+                        type="text"
+                        name="username"
+                        value={credentials.username}
+                        onChange={handleChange}
+                    />
 
-                <label htmlFor='password'>Password</label>
-                <input
-                    id='password'
-                    value={user.password}
-                    name='password'
-                    onChange={handleLoginChange}
-                />
-                <div>
-                    <button>Login</button>
-                </div>
-            </form>
+                    <label>Password:</label>
+                    <input
+                        id="password"
+                        data-testid="password"
+                        type="text"
+                        name="password"
+                        value={credentials.password}
+                        onChange={handleChange}
+                    />
+                    <div>
+                        <button data-testid="submit"
+                            id="submit" >Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <p data-testid="errorMessage" id="error" className="error">{error}</p>
         </div>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;
+
+

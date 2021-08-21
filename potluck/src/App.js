@@ -2,10 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
-// import "./styles.scss";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
-// import "./styles.scss";
 
 const logout = () => {
   localStorage.removeItem("token");
@@ -15,19 +13,19 @@ const logout = () => {
 function App() {
   return (
     <Router>
-      <div>
-        <header>
+      <div className="App">
+        <header >
           <h1>Potluck Planner</h1>
           <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
         </header>
-        
         <Switch>
         <PrivateRoute exact path='/potluck' component={Potluck} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Registration} />
+        <Route path="/register" component={Registration} />
+        <Route path="/login" component={Login} />
+          
           <Route exact path="/" component={Login} />
           {/* <Registration /> */}
-          {/* <Potluck /> */}
+          <Potluck />
           {/* <Login /> */}
         </Switch>
       </div>
