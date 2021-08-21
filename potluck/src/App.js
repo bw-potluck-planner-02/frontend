@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Potluck from "./components/Potluck";
 
 import Login from "./components/Login";
@@ -9,18 +9,22 @@ function App() {
   return (
     <Router>
       <div>
+        <header>
         <h1>Potluck Planner</h1>
-
+        </header>
+        <Switch>
         <Route path="/login" component={Login} />
-          <Login />
+          
       
         <Route path="/register" component={Registration} />
           <Registration />
-    
 
         <Route path='/potluck' />
-          <Potluck />
+          {/* <Potluck /> */}
+
           <Route exact path="/" component={Login} />
+          {/* <Login /> */}
+          </Switch>
       </div>
     </Router>
   );

@@ -13,6 +13,7 @@ function Login() {
 
     return (
         <div>
+            <h2>LogIn</h2>
             <form onSubmit={handleLoginSubmit}>
                 <label htmlFor='username'>Username</label>
                 <input
