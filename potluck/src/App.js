@@ -24,8 +24,8 @@ function App() {
         <Route path="/login" component={Login} />
           
           <Route exact path="/" component={Login} />
-          <Registration />
-          {/* <Potluck /> */}
+          {/* <Registration /> */}
+          <Potluck />
           {/* <Login /> */}
         {/* </Switch> */}
       </div>

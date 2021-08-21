@@ -8,6 +8,12 @@ import thunk from "redux-thunk";
 import { BrowserRouter as Router } from 'react-router-dom';
 import rootReducer from "./api/rootReducer";
 
+// MOCKS+++++++++++++++++
+const { worker } = require("./mocks/browser.js");
+
+worker.start();
+// MOCKS for testing+++++++++++++++++++
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 console.log("STORE", store.getState());
 
