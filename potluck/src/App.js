@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
 import Login from "./components/Login";
@@ -17,7 +17,17 @@ function App() {
       <div className="App">
         <header >
           <h1>Potluck Planner</h1>
-          <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
+          
+          <nav>
+            <Link to="/landing"> Home</Link>
+            <span className="navspans"></span>
+            <Link to="/dashboard">DashBoard</Link>
+            <span className="navspans"></span>
+            <Link to="/my-profile">My Profile</Link>
+            <span className="navspans"></span>
+            <Link to="/help">Help</Link>
+            <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
+          </nav>
         </header>
         {/* <Switch> */}
         {/* <PrivateRoute path="/dashboard">
@@ -27,13 +37,16 @@ function App() {
         <Potluck />
         </PrivateRoute>
         
-        <Route path="/register" component={Registration} />
+
         <Route path="/login">
           <Login />
         </Route>
           
+        <Route path="/register" component={Registration} />
+        {/* <Registration /> */}
+
           <Route exact path="/" component={Login} />
-          <Registration />
+          
           
           {/* <Login /> */}
         {/* </Switch> */}
