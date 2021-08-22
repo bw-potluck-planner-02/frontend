@@ -19,22 +19,24 @@ function App() {
           <h1>Potluck Planner</h1>
           
           <nav>
-            <Link to="/landing"> Home</Link>
-            <span className="navspans"></span>
-            <Link to="/dashboard">DashBoard</Link>
-            <span className="navspans"></span>
-            <Link to="/my-profile">My Profile</Link>
-            <span className="navspans"></span>
+            
+            <span className="navspans"><Link to="/landing">Home</Link></span>
+            
+            <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
+            
+            <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
             <Link to="/help">Help</Link>
-            <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
+            <span className="navspancs"><Link data-testid="logoutButton" href="/" onClick={logout}>logout</Link></span>
+          
           </nav>
         </header>
         {/* <Switch> */}
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
+
         <PrivateRoute path='/potluck'>
-        <Potluck />
+          <Potluck />
         </PrivateRoute>
         
 

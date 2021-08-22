@@ -18,10 +18,10 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 console.log("STORE", store.getState());
 
 ReactDOM.render(
+  <Router>
   <Provider store={store}>
-    <Router>
       <App />
-    </Router>
-  </Provider>,
+  </Provider>
+  </Router>,
   document.getElementById("root")
 );
