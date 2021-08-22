@@ -19,7 +19,7 @@ function App() {
           <h1>Potluck Planner</h1>
 
           <nav>
-            <span className="navspans"><Link to="/landing">Home</Link></span>
+            <span className="navspans"><Link to="/">Home</Link></span>
             <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
             <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
             <span className="navspans"><Link to="/help">Help</Link></span>
