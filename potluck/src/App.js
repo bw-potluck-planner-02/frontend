@@ -13,7 +13,7 @@ const logout = () => {
 
 function App() {
   return (
-    <Router>
+    
       <div className="App">
         <header >
           <h1>Potluck Planner</h1>
@@ -23,6 +23,7 @@ function App() {
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
+          
         <PrivateRoute path='/potluck'>
         <Potluck />
         </PrivateRoute>
@@ -38,7 +39,7 @@ function App() {
           {/* <Login /> */}
         </Switch>
       </div>
-    </Router>
+    
   );
 }
 
