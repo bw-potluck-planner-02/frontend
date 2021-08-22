@@ -23,7 +23,7 @@ function App() {
             <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
             <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
             <span className="navspans"><Link to="/help">Help</Link></span>
-            <span className="navspancs"><Link data-testid="logoutButton" href="/" onClick={logout}>logout</Link></span>
+            <span className="navspancs"><Link to href="/" onClick={logout}>logout</Link></span>
           </nav>
         </header>
         {/* <Switch> */}
