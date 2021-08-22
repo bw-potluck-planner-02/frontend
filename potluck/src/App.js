@@ -30,12 +30,15 @@ function App() {
           </nav>
         </header>
         {/* <Switch> */}
+
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
+
         <PrivateRoute path='/potluck'>
-        <Potluck />
+          <Potluck />
         </PrivateRoute>
+
         
 
         <Route path="/login">
@@ -52,6 +55,7 @@ function App() {
         {/* </Switch> */}
       </div>
     </Router>
+
   );
 }
 
