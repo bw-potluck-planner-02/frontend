@@ -17,17 +17,13 @@ function App() {
       <div className="App">
         <header >
           <h1>Potluck Planner</h1>
-          
+
           <nav>
-            
             <span className="navspans"><Link to="/landing">Home</Link></span>
-            
             <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
-            
             <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
-            <Link to="/help">Help</Link>
+            <span className="navspans"><Link to="/help">Help</Link></span>
             <span className="navspancs"><Link data-testid="logoutButton" href="/" onClick={logout}>logout</Link></span>
-          
           </nav>
         </header>
         {/* <Switch> */}
@@ -38,19 +34,19 @@ function App() {
         <PrivateRoute path='/potluck'>
           <Potluck />
         </PrivateRoute>
-        
+
 
         <Route path="/login">
           <Login />
         </Route>
-          
+
         <Route path="/register" component={Registration} />
         {/* <Registration /> */}
 
-          <Route exact path="/" component={Login} />
-          
-          
-          {/* <Login /> */}
+        <Route exact path="/" component={Login} />
+
+
+        {/* <Login /> */}
         {/* </Switch> */}
       </div>
     </Router>
