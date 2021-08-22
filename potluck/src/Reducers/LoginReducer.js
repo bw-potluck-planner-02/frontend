@@ -26,7 +26,7 @@ export const initialState = {
   success: "",
 };
 
-const reducer = (state = initialState, action) => {
+export const LoginReducer = (state = initialState, action) => {
   switch (action.type) {
     case API_ACTION_START:
       return {
@@ -63,4 +63,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+// export default LoginReducer;

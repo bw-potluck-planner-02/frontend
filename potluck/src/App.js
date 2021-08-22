@@ -4,6 +4,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
+import RenderHomePage from "./components/pages/Home/RenderHomePage";
 // import DashboardPage from "./components/Dashboard"
 
 const logout = () => {
@@ -28,13 +29,16 @@ function App() {
           <Potluck />
         </PrivateRoute>
 
-        <Route path="/register" component={Registration} />
+        <Route path="/register" />
+        <Registration />
+
         <Route path="/login">
           <Login />
         </Route>
 
-        <Route exact path="/" component={Login} />
-        <Registration />
+        <Route exact path="/" >
+          <RenderHomePage />
+          </Route>        
 
         {/* <Login /> */}
       </Switch>
