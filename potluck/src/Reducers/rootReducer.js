@@ -3,7 +3,7 @@ import {
   API_ACTION_FAIL,
   USER_LOGIN_SUCCESS,
   USER_REGISTER_SUCCESS,
-} from "../api/actions";
+} from "../Actions/actions";
 
 export const initialState = {
   user: {

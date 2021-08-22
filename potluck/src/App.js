@@ -19,21 +19,24 @@ function App() {
           <h1>Potluck Planner</h1>
           <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
         </header>
-        <Switch>
+        {/* <Switch> */}
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
         <PrivateRoute path='/potluck'>
         <Potluck />
         </PrivateRoute>
+        
         <Route path="/register" component={Registration} />
-        <Route path="/login" component={Login} />
+        <Route path="/login">
+          <Login />
+        </Route>
           
           <Route exact path="/" component={Login} />
-          {/* <Registration /> */}
+          <Registration />
           
           {/* <Login /> */}
-        </Switch>
+        {/* </Switch> */}
       </div>
     </Router>
   );
