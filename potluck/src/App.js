@@ -13,33 +13,33 @@ const logout = () => {
 
 function App() {
   return (
-    
-      <div className="App">
-        <header >
-          <h1>Potluck Planner</h1>
-          <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
-        </header>
-        <Switch>
+
+    <div className="App">
+      <header >
+        <h1>Potluck Planner</h1>
+        <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
+      </header>
+      <Switch>
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
-          
+
         <PrivateRoute path='/potluck'>
-        <Potluck />
+          <Potluck />
         </PrivateRoute>
-        
+
         <Route path="/register" component={Registration} />
         <Route path="/login">
           <Login />
         </Route>
-          
-          <Route exact path="/" component={Login} />
-          <Registration />
-          
-          {/* <Login /> */}
-        </Switch>
-      </div>
-    
+
+        <Route exact path="/" component={Login} />
+        <Registration />
+
+        {/* <Login /> */}
+      </Switch>
+    </div>
+
   );
 }
 
