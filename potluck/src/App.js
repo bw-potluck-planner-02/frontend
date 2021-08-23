@@ -8,10 +8,10 @@ import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
 import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 import DashboardPage from "./components/pages/Dashboard/RenderDashboardPage";
 
-const logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "login";
-}
+// const logout = () => {
+//   localStorage.removeItem("token");
+//   window.location.href = "login";
+// }
 
 function App() {
   return (

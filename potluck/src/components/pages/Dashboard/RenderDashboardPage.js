@@ -20,6 +20,11 @@ function RenderDashboardPage() {
     history.push('/dashboard/new-event');
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "login";
+  }
+
   return (
     <div className="page">
       <header>
@@ -32,6 +37,7 @@ function RenderDashboardPage() {
           <Link to="/my-profile">My Profile</Link>
           <span className="navspans"></span>
           <Link to="/help">Help</Link>
+          <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
         </nav>
       </header>
       <div className="content-container">
