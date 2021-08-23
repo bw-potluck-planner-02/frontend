@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
-import Login from "./components/Login";
+import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
 // import DashboardPage from "./components/Dashboard"
@@ -42,17 +42,10 @@ function App() {
           </PrivateRoute>
 
           <Route path="/login">
-            <Login />
-
-            <Route exact path="/" >
-              <RenderLandingPage />
+            <LoginPage />
             </Route>
 
-            <Route path="/register" />
-            <Registration />
-          </Route>
-
-          <Route exact path="/">
+          <Route path="/">
             <RenderLandingPage />
           </Route> 
 
