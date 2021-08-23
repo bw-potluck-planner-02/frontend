@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import PrivateRoute from './utils/PrivateRoute';
+import PrivateRoute from "./utils/PrivateRoute";
 import Potluck from "./components/Potluck";
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
@@ -11,7 +11,7 @@ import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 const logout = () => {
   localStorage.removeItem("token");
   window.location.href = "login";
-}
+};
 
 function App() {
   return (
@@ -37,20 +37,17 @@ function App() {
             <MyProfilePage />
           </PrivateRoute>
 
-
-          <PrivateRoute path='/potluck'>
+          <PrivateRoute path="/potluck">
             <Potluck />
           </PrivateRoute>
 
           <Route path="/login">
             <LoginPage />
-            </Route>
+          </Route>
 
           <Route path="/">
             <RenderLandingPage />
-          </Route> 
-
-
+          </Route>
         </Switch>
       </div>
     </Router>
