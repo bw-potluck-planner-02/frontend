@@ -5,8 +5,8 @@ import { CreateNewEvent } from 'CreateNewEvent/';
 import PrivateRoute from 'PrivateRoute';
 import { TOGGLE_EDITING } from 'reducers/eventsReducer';
 
-import DashboardHost from 'DashboardHostEvents';
-import DashboardGuest from 'DashboardGuestEvents';
+import DashboardHost from '../Dashboard/DashBoardHostEvents';
+import DashboardGuest from '../DashboardGuestEvents';
 import GuestRsvp from '/GuestRsvp';
 
 function RenderDashboardPage() {
