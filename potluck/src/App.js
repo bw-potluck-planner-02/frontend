@@ -4,7 +4,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
-import RenderHomePage from "./components/pages/Home/RenderHomePage";
+import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
 // import DashboardPage from "./components/Dashboard"
 
 const logout = () => {
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header >
+        {/* <header >
           <h1>Potluck Planner</h1>
 
           <nav>
@@ -26,7 +26,7 @@ function App() {
             <span className="navspans"><Link to="/help">Help</Link></span>
             <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
           </nav>
-        </header>
+        </header> */}
         <Switch>
           {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
@@ -45,17 +45,15 @@ function App() {
             <Login />
 
             <Route exact path="/" >
-              <RenderHomePage />
+              <RenderLandingPage />
             </Route>
 
             <Route path="/register" />
             <Registration />
           </Route>
-{/* 
-         <Route path="/" component={Login} />  */}
 
           <Route exact path="/">
-            <RenderHomePage />
+            <RenderLandingPage />
           </Route> 
 
 
