@@ -8,4 +8,4 @@ function LansingContainer ({ LoadingComponent }) {
         </>
     );
 }
-export default LansingContainer
+export default LandingContainer

@@ -5,6 +5,7 @@ import Potluck from "./components/Potluck";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
+import Home from './components/Home'
 // import DashboardPage from "./components/Dashboard"
 
 const logout = () => {
@@ -16,17 +17,18 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <header >
+        <header >
           <h1>Potluck Planner</h1>
 
           <nav>
             <span className="navspans"><Link to="/">Home</Link></span>
+            {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
             <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
             <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
             <span className="navspans"><Link to="/help">Help</Link></span>
             <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
           </nav>
-        </header> */}
+        </header>
         <Switch>
           {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
@@ -43,20 +45,19 @@ function App() {
 
           <Route path="/login">
             <Login />
+          </Route>
 
-            <Route exact path="/" >
+          <Route path="/landing" >
               <RenderLandingPage />
-            </Route>
+          </Route>
 
-            <Route path="/register" />
+          <Route path="/register" >
             <Registration />
           </Route>
 
           <Route exact path="/">
-            <RenderLandingPage />
+            <Home />
           </Route> 
-
-
 
         </Switch>
       </div>
