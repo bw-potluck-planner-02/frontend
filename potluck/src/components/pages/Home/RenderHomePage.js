@@ -3,14 +3,14 @@ import { Link, useHistory } from 'react-router-dom';
 import '../../../index.css';
 import { states } from '../../constants/index';
 import { useForm } from '../../hooks/useForm';
-import { useAPI } from '../../../hooks/useAPI';
+import { useAPI } from '../../hooks/useAPI';
 import { useSelector, useDispatch } from 'react-redux';
 import Dropdown from '../../../components/DropDown';
 import {
     USER_EVENT_START,
     USER_EVENT_SUCCESS,
     USER_EVENT_ERROR,
-} from '../../../state/reducers/userReducer';
+} from '../../../Reducers/userReducer';
 
 const initialFormValues = {
     first_name: '',
@@ -24,7 +24,7 @@ const initialFormValues = {
     password: '',
 };
 
-function RenderHomegPage(props) {
+function RenderHomePage(props) {
     // make a post request to retrieve a token from the api
     // when you have handled the token, navigate to the Login route
 
