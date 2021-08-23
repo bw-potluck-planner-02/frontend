@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { TOGGLE_EDITING } from "../../state/reducers/eventsReducer";
+// import { TOGGLE_EDITING } from "";
 
 const DashboardGuest = () => {
     const eventsState = useSelector((state) => state.eventsReducer);

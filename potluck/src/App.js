@@ -28,32 +28,38 @@ function App() {
           </nav>
         </header>
         <Switch>
-        {/* <PrivateRoute path="/dashboard">
+          {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
 
-        <PrivateRoute path='/potluck'>
-          <Potluck />
-        </PrivateRoute>
+          {/* <PrivateRoute path="/my-profile">
+            <MyProfilePage />
+          </PrivateRoute> */}
+
+
+          <PrivateRoute path='/potluck'>
+            <Potluck />
+          </PrivateRoute>
+
+          <Route path="/login">
+            <Login />
+
+            <Route exact path="/" >
+              <RenderHomePage />
+            </Route>
+
+            <Route path="/register" />
+            <Registration />
+          </Route>
+{/* 
+         <Route path="/" component={Login} />  */}
+
+          <Route exact path="/">
+            <RenderHomePage />
+          </Route> 
 
 
 
-        <Route path="/login">
-          <Login />
-
-
-        <Route exact path="/" >
-          <RenderHomePage />
-          </Route>        
-
-        <Route path="/register" component={Registration} />
-        <Registration />
-
-        </Route>
-        <Route exact path="/" component={Login} />
-
-
-        {/* <Login /> */}
         </Switch>
       </div>
     </Router>
