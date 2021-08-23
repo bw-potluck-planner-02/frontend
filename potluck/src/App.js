@@ -5,6 +5,7 @@ import Potluck from "./components/Potluck";
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
+import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 // import DashboardPage from "./components/Dashboard"
 
 const logout = () => {
@@ -32,9 +33,9 @@ function App() {
           <DashboardPage />
           </PrivateRoute> */}
 
-          {/* <PrivateRoute path="/my-profile">
+          <PrivateRoute path="/my-profile">
             <MyProfilePage />
-          </PrivateRoute> */}
+          </PrivateRoute>
 
 
           <PrivateRoute path='/potluck'>
@@ -48,7 +49,6 @@ function App() {
           <Route path="/">
             <RenderLandingPage />
           </Route> 
-
 
 
         </Switch>
