@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useForm } from '../../../hooks/useForm';
-import { useAPI } from '../../../hooks/useAPI';
+import { useForm } from '../../../components/hooks/useForm';
+import { useAPI } from '../../../components/hooks/useAPI';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   ADD_EVENT_START,
   ADD_EVENT_SUCCESS,
   ADD_EVENT_ERROR,
   EDIT_EVENT_SUCCESS,
-} from '../../../state/reducers/eventsReducer';
+} from '../../../Reducers/eventsReducer';
 
-import CreateEventProgressBar from 'CreateEventProgressBar';
+import CreateEventProgressBar from '../../../components/CreateEventProgressBar';
 import RenderCreateNewEventPage from './RenderCreateNewEventPage';
 import StepTwoContainer from './StepTwo/StepTwoContainer';
 import StepThreeContainer from './StepThree/StepThreeContainer';
