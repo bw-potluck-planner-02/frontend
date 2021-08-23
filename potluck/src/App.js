@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import Potluck from "./components/Potluck";
 import Login from "./components/Login";
@@ -14,13 +14,20 @@ const logout = () => {
 
 function App() {
   return (
+    <Router>
+      <div className="App">
+        <header >
+          <h1>Potluck Planner</h1>
 
-    <div className="App">
-      <header >
-        <h1>Potluck Planner</h1>
-        <button data-testid="logoutButton" href="/" onClick={logout}>logout</button>
-      </header>
-      <Switch>
+          <nav>
+            <span className="navspans"><Link to="/">Home</Link></span>
+            <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
+            <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
+            <span className="navspans"><Link to="/help">Help</Link></span>
+            <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
+          </nav>
+        </header>
+        <Switch>
         {/* <PrivateRoute path="/dashboard">
           <DashboardPage />
           </PrivateRoute> */}
@@ -29,21 +36,27 @@ function App() {
           <Potluck />
         </PrivateRoute>
 
-        <Route path="/register" />
-        <Registration />
+
 
         <Route path="/login">
           <Login />
-        </Route>
+
 
         <Route exact path="/" >
           <RenderHomePage />
           </Route>        
 
-        {/* <Login /> */}
-      </Switch>
-    </div>
+        <Route path="/register" component={Registration} />
+        <Registration />
 
+        </Route>
+        <Route exact path="/" component={Login} />
+
+
+        {/* <Login /> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
