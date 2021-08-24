@@ -9,7 +9,8 @@ import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
 import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 
-// import DashboardPage from "./components/Dashboard"
+import DashboardPage from "./components/pages/Dashboard/RenderDashboardPage";
+
 
 const logout = () => {
   localStorage.removeItem("token");
@@ -45,9 +46,9 @@ function App() {
           </nav>
         </header> */}
         <Switch>
-          {/* <PrivateRoute path="/dashboard">
+          <PrivateRoute path="/dashboard">
           <DashboardPage />
-          </PrivateRoute> */}
+          </PrivateRoute>
 
           <PrivateRoute path="/my-profile">
             <MyProfilePage />

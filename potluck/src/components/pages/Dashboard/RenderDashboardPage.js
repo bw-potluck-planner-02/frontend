@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Switch, useHistory } from 'react-router-dom';
-import { CreateNewEvent } from 'CreateNewEvent/';
-import PrivateRoute from 'PrivateRoute';
-import { TOGGLE_EDITING } from 'reducers/eventsReducer';
+import { CreateNewEvent } from '../CreateNewEvent';
+import PrivateRoute from '../../../utils/PrivateRoute';
+import { TOGGLE_EDITING } from '../../../Reducers/eventsReducer';
 
 import DashboardHost from '../Dashboard/DashBoardHostEvents';
-import DashboardGuest from '../DashboardGuestEvents';
-import GuestRsvp from '/GuestRsvp';
+import DashboardGuest from '../Dashboard/DashBoardGuestEvents';
+import GuestRsvp from '../../../components/GuestRsvp';
 
 function RenderDashboardPage() {
   const eventsState = useSelector(state => state.eventsReducer);
