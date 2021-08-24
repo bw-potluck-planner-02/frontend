@@ -8,6 +8,7 @@ const StyledRegistration = styled.div`
     margin: 20px;
     height: 80vh;
     width: 95%;
+    border: 1px solid black;
     
     img {
         width: 400px;
@@ -16,18 +17,24 @@ const StyledRegistration = styled.div`
     }
 
     .introduction {
-        padding: 10px;
+        
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-top: 45px;
+        width: 50%;
+        border: 1px solid green;
     }
 
     .form {
-        padding: 10px;
+        
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        padding: 10px;
+        width: 50%;
+        border: 1px solid red;
     }
 
     .registration {
