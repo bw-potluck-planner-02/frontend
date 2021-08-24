@@ -1,49 +1,49 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useForm } from '../../hooks/useForm';
-import { useAPI } from '../../hooks/useAPI';
+import { useForm } from '../../src/components/hooks/useForm';
+import { useAPI } from '../../src/components/hooks/useAPI';
 import {
   EVENT_DATA_START,
   EVENT_DATA_SUCCESS,
   EVENT_DATA_ERROR,
   RSVP_ADD_ITEM,
-} from '../../state/reducers/eventsReducer';
+} from '../Reducers/eventsReducer';
 
 const state = {
-  id: 163,
-  date: '2020-08-28',
+  id: 123,
+  date: '2021-08-28',
   event_title: 'Picnic',
-  address_one: '11725 SE 193rd Pl',
+  address_one: '1234',
   address_two: 'Apt 107',
-  city: 'Venice',
-  state: 'Florida',
-  zip: '34285',
-  contact_phone: '2063532979',
+  city: 'Grafton',
+  state: 'Wisconsin',
+  zip: '53024',
+  contact_phone: '2061234567',
   start_time: '4:00',
   end_time: '5:00',
-  special_instructions: 'Park at home',
+  special_instructions: 'Park out front',
   user_id: 26,
   host: {
-    first_name: 'David',
-    last_name: 'Mark',
-    email: 'davidmark@yahoo.com',
+    first_name: 'Rick',
+    last_name: 'Mansfield',
+    email: 'RicksMyCodeGuy@gmail.com',
   },
   menu_items: [
     {
-      id: 116,
-      item_name: 'Biscuts',
-      event_id: 163,
+      id: 1,
+      item_name: 'Chips',
+      event_id: 123,
       guest_id: null,
     },
     {
-      id: 117,
-      item_name: 'Bacon',
-      event_id: 163,
+      id: 2,
+      item_name: 'dip',
+      event_id: 123,
       guest_id: null,
     },
     {
-      id: 118,
-      item_name: 'Pie',
+      id: 3,
+      item_name: 'Cupcakes',
       event_id: 163,
       guest_id: null,
     },
