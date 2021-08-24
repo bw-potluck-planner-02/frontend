@@ -44,18 +44,18 @@ const state = {
     {
       id: 3,
       item_name: 'Cupcakes',
-      event_id: 163,
+      event_id: 123,
       guest_id: null,
     },
   ],
   guests: [
     {
       id: 20,
-      first_name: 'Dana White',
-      email: 'danaw@mail.com',
+      first_name: 'TraNequa',
+      email: 'shecodes@nenethecreative.com',
       rsvp_pending: true,
       attending: false,
-      event_id: 163,
+      event_id: 123,
       user_id: null,
     },
   ],

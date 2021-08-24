@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const logout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "login";
+}
+
+
 function RenderMyProfilePage(props) {
   return (
     <div className="page">
@@ -14,6 +20,7 @@ function RenderMyProfilePage(props) {
           <Link to="/dashboard">DashBoard</Link>
           <span className="navspans"></span>
           <Link to="/help">Help</Link>
+          <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
         </nav>
       </header>
       <div className="content-container">
