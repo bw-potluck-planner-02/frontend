@@ -21,6 +21,40 @@ const StyledHeader = styled.header`
   color: ${({ theme }) => theme.secondaryColor};
 `;
 
+const StyledMainPage = styled.div`
+  height: 80vh;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledChild = styled.div`
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  padding: 0 5%;
+  form {
+    border: 1px solid blue;
+    align-items: center;
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: space-between;
+    width: 100%;
+  }
+  button {
+    margin-top: 20%;
+    border: blue solid 1px;
+  }
+`;
+const StyledInputs = styled.div`
+  border: solid black 1px;
+  padding: 2%;
+`;
 const LoginPage = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.userReducer);
@@ -36,8 +70,8 @@ const LoginPage = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
       .then((res) => {
-        console.log('POST Login Resp:',res);
-        console.log('TOKEN', res.token);
+        console.log("POST Login Resp:", res);
+        console.log("TOKEN", res.token);
         localStorage.setItem("token", res.token);
         dispatch({
           type: USER_EVENT_SUCCESS,
@@ -76,25 +110,29 @@ const LoginPage = () => {
             <Link to="/help">Help</Link>
           </nav>
         </StyledHeader>
-        <div className="content-container">
-          <div className="form">
+        <StyledMainPage>
+          <StyledChild>
             <section>
-              <h1>Login To Your Account</h1>
+              <h1>Login</h1>
               <form onSubmit={login}>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="username"
-                  value={values.email}
-                  onChange={handleChanges}
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  value={values.password}
-                  onChange={handleChanges}
-                />
+                <StyledInputs>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    value={values.email}
+                    onChange={handleChanges}
+                  />
+                </StyledInputs>
+                <StyledInputs>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={values.password}
+                    onChange={handleChanges}
+                  />
+                </StyledInputs>
                 {!state.loading ? (
                   <button>Log In</button>
                 ) : (
@@ -103,8 +141,8 @@ const LoginPage = () => {
               </form>
               ​
             </section>
-          </div>
-        </div>
+          </StyledChild>
+        </StyledMainPage>
       </div>
     </>
   );
