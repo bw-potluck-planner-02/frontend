@@ -20,7 +20,7 @@ const DashboardHost = () => {
     const history = useHistory();
     const [data, moveData, error] = useAPI({
         method: 'get',
-        url: '/event',
+        url: '/api/potlucks',
         data: {},
     });
 
