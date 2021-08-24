@@ -11,8 +11,8 @@ import {
     TOGGLE_EDITING,
     SET_CURRENT_EVENT,
     EDIT_EVENT,
-} from '../../state/reducers/eventsReducer';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
+} from '../../../Reducers/eventsReducer';
+import { axiosWithAuth } from '../../../utils/axiosWithAuth';
 
 const DashboardHost = () => {
     const eventsState = useSelector(state => state.eventsReducer);
@@ -82,5 +82,3 @@ const DashboardHost = () => {
 };
 
 export default DashboardHost;
-
-//test comments to be deleted later

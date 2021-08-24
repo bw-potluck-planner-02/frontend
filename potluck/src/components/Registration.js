@@ -18,7 +18,7 @@ const Registration = (props) => {
 
     const formSubmit = (e) => {
         e.preventDefault();
-        // passes user state to actions.js
+        // Note to self passes user state to actions.js
         // props.userRegistration(user);
     };
 

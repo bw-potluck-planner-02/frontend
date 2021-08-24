@@ -71,11 +71,11 @@ function RenderLandingPage(props) {
                     <nav>
                         <Link to="/login"> Login</Link>
                         <span className="navspans"></span>
-                        {/* <Link to="/dashboard">DashBoard</Link>
+                        <Link to="/dashboard">DashBoard</Link>
                         <span className="navspans"></span>
                         <Link to="/my-profile">My Profile</Link>
                         <span className="navspans"></span>
-                        <Link to="/help">Help</Link> */}
+                        <Link to="/help">Help</Link>
                     </nav>
                 </header>
 

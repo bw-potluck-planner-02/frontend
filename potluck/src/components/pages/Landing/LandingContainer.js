@@ -1,7 +1,7 @@
 import React from 'react';
 import RenderLandingPage from '.RenderLandingPage';
 
-function LansingContainer ({ LoadingComponent }) {
+function LandingContainer ({ LoadingComponent }) {
     return (
         <>
         <RenderLandingPage />

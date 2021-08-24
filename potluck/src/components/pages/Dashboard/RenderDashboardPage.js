@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Switch, useHistory } from 'react-router-dom';
-import { CreateNewEvent } from 'CreateNewEvent/';
-import PrivateRoute from 'PrivateRoute';
-import { TOGGLE_EDITING } from 'reducers/eventsReducer';
+import { CreateNewEvent } from '../CreateNewEvent';
+import PrivateRoute from '../../../utils/PrivateRoute';
+import { TOGGLE_EDITING } from '../../../Reducers/eventsReducer';
 
-import DashboardHost from 'DashboardHostEvents';
-import DashboardGuest from 'DashboardGuestEvents';
-import GuestRsvp from '/GuestRsvp';
+import DashboardHost from '../Dashboard/DashBoardHostEvents';
+import DashboardGuest from '../Dashboard/DashBoardGuestEvents';
+import GuestRsvp from '../../../components/GuestRsvp';
 
 function RenderDashboardPage() {
   const eventsState = useSelector(state => state.eventsReducer);
@@ -19,6 +19,11 @@ function RenderDashboardPage() {
     dispatch({ type: TOGGLE_EDITING });
     history.push('/dashboard/new-event');
   };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "login";
+  }
 
   return (
     <div className="page">
@@ -32,6 +37,7 @@ function RenderDashboardPage() {
           <Link to="/my-profile">My Profile</Link>
           <span className="navspans"></span>
           <Link to="/help">Help</Link>
+          <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
         </nav>
       </header>
       <div className="content-container">
