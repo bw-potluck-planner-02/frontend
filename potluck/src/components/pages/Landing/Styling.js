@@ -7,10 +7,22 @@ const StyledRegistration = styled.div`
     justify-content: center;
     margin: 20px;
     height: 80vh;
+    border: 1px solid purple;
+    
+
+    img {
+        width: 400px;
+        height: 300px;
+        margin-top: 20px;
+    }
 
     .introduction {
-        border: 1px solid black;
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 50px;
     }
 
     .form {
@@ -32,7 +44,6 @@ const StyledRegistration = styled.div`
         flex-direction: column;
         justify-content: space-between;
         height: 300px;
-        
     }
     
 `
