@@ -16,17 +16,17 @@ import StepTwoContainer from './StepTwo/StepTwoContainer';
 import StepThreeContainer from './StepThree/StepThreeContainer';
 
 const initialFormValues = {
-  date: '',
-  event_title: '',
+  potluck_date: '',
+  potluck_name: '',
   address_one: '',
-  address_two: '',
+  // address_two: '',
   city: '',
   state: '',
   zip: '',
-  contact_phone: '',
-  start_time: '',
-  end_time: '',
-  special_instructions: '',
+  // contact_phone: '',
+  potluck_time: '',
+  // end_time: '',
+  potluck_description: '',
 };
 
 const CreateNewEvent = props => {
@@ -44,7 +44,14 @@ const CreateNewEvent = props => {
     url: '/api/potlucks',
     data: {
       ...values,
-      user_id: userState.user.id,
+      // user_id: userState.user_id.id,
+      potluck_name: values.potluck_name,
+      potluck_description: values.potluck_description,
+      potluck_date: values.potluck_date,
+      potluck_time: values.potluck_time,
+      potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
+      organizer: 3,
+      
     },
   });
 
@@ -52,8 +59,8 @@ const CreateNewEvent = props => {
     method: 'put',
     url: `/api/potlucks/:id${eventsState.currentEventID}`,
     data: {
-      ...values,
-      user_id: userState.user.id,
+      // ...values,
+      // user_id: userState.user.id,
     },
   });
 
@@ -61,7 +68,7 @@ const CreateNewEvent = props => {
     dispatch({ type: ADD_EVENT_START });
     moveData()
       .then(res => {
-        console.log(res);
+        console.log('PostEvent Resp: CreateNewEventContainer',res);
         const newEvent = {
           ...res,
           event_id: res.id,
@@ -107,7 +114,7 @@ const CreateNewEvent = props => {
       });
   };
 
-  const submit = e => {
+  const submit = (e) => {
     e.preventDefault();
     !eventsState.editEvent ? postEvent() : putEvent();
   };

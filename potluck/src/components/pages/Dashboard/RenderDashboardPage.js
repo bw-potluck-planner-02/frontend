@@ -20,10 +20,10 @@ function RenderDashboardPage() {
     history.push('/dashboard/new-event');
   };
 
-  const logout = () => {
+  const logout = (e) => {
     localStorage.removeItem("token");
     window.location.href = "login";
-    console.log('LOGGED OUT?:', localStorage.headers.authorization);
+    // console.log('LOGGED OUT?:', localStorage.headers.authorization);
   }
 
   return (
