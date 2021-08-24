@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "login";
+}
+
 const StyledHome = styled.div`
     box-sizing: border-box;
     height: 90vh;
@@ -50,28 +55,41 @@ export default function Home() {
     }
 
     return (
-            <StyledHome>
-                <div className='main'>
-                    <h1>Potluck Planning Made Easy</h1>
-                    <div className='button-container'>
-                        <Link to='/landing'>
-                            <button
-                                onlick={routeToPotluck}
-                                className='create-acctBtn'>
-                                Create an Account
-                            </button>
-                        </Link>
 
-                        <Link to='/login'>
+        <StyledHome>
+            <header>
+                <h1>Potluck Planner</h1>
+
+                <nav>
+                    <span className="navspans"><Link to="/">Home</Link></span>
+                    {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
+                    <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
+                    <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
+                    <span className="navspans"><Link to="/help">Help</Link></span>
+                    <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
+                </nav>
+            </header>
+            <div className='main'>
+                <h1>Potluck Planning Made Easy</h1>
+                <div className='button-container'>
+                    <Link to='/landing'>
                         <button
-                                onlick={routeToPotluck}
-                                className='loginBtn'>
-                                Login
-                            </button>
-                        </Link>
-                    </div>
+                            onlick={routeToPotluck}
+                            className='create-acctBtn'>
+                            Create an Account
+                        </button>
+                    </Link>
+
+                    <Link to='/login'>
+                        <button
+                            onlick={routeToPotluck}
+                            className='loginBtn'>
+                            Login
+                        </button>
+                    </Link>
                 </div>
-                    
-            </StyledHome>    
+            </div>
+
+        </StyledHome>
     )
 }

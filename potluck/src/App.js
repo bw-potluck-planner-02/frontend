@@ -40,65 +40,46 @@ function App() {
     <Router>
 
       <div className="App">
-        <header >
+        
 
-      <StyledBody className="App">
-        {/* <header >
+          <StyledBody className="App">
 
-          <h1>Potluck Planner</h1>
+            <Switch>
+              <PrivateRoute path="/dashboard">
+                <DashboardPage />
+              </PrivateRoute>
 
-          <nav>
-            <span className="navspans"><Link to="/">Home</Link></span>
-            {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
-            <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
-            <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
-            <span className="navspans"><Link to="/help">Help</Link></span>
-            <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
-          </nav>
-        </header>
-        <Switch>
-          <PrivateRoute path="/dashboard">
-          <DashboardPage />
-          </PrivateRoute>
+              <PrivateRoute path="/my-profile">
+                <MyProfilePage />
+              </PrivateRoute>
 
-          <PrivateRoute path="/my-profile">
-            <MyProfilePage />
-          </PrivateRoute>
+              <Route path="/login">
+                <LoginPage />
+              </Route>
 
-          <PrivateRoute path="/potluck">
-            <Potluck />
-          </PrivateRoute>
+              <Route path="/landing" >
+                <RenderLandingPage />
+              </Route>
 
-          <Route path="/login">
+              <Route path="/register" >
+                <Registration />
+              </Route>
 
-            <Login />
-          </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-          <Route path="/landing" >
-              <RenderLandingPage />
-          </Route>
+              <Route>
+                <LoginPage />
+              </Route>
 
-          <Route path="/register" >
-            <Registration />
-          </Route>
+            </Switch>
+          </StyledBody>
 
-          <Route exact path="/">
-            <Home />
-          </Route> 
-
-
-            <LoginPage />
-          </Route>
-
-          <Route path="/">
-            <RenderLandingPage />
-          </Route>
-
-        </Switch>
-      </StyledBody>
+          </div>
     </Router>
-  );
+        );
 }
 
 
-export default App;
+        export default App;
