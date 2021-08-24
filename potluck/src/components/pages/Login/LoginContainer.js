@@ -22,38 +22,61 @@ const StyledHeader = styled.header`
 `;
 
 const StyledMainPage = styled.div`
-  height: 80vh;
-  border: 1px black solid;
+  background-image: url("https://images.unsplash.com/photo-1559839826-f52348d3e1c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1585&q=80");
+  background-size: cover;
+  height: 85.2vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  h1 {
+    margin-top: -2%;
+    font-size: 3rem;
+  }
 `;
 
 const StyledChild = styled.div`
-  border: solid 1px black;
+  border: 0px;
+  border-radius: 30px;
+  background-color: #f2f2f2;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 60vh;
   padding: 0 5%;
   form {
-    border: 1px solid blue;
-    align-items: center;
-    padding: 4%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-items: space-between;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    input {
+      padding: 8%;
+      border: none;
+      border-radius: 25px;
+    }
   }
   button {
-    margin-top: 20%;
-    border: blue solid 1px;
+    border-radius: 25px;
+    width: 80%;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, #284b63 100%);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+  }
+  button:hover {
+    background-color: black;
   }
 `;
 const StyledInputs = styled.div`
-  border: solid black 1px;
-  padding: 2%;
+  margin-top: -5%;
+  padding: 15% 0 15% 0;
+  margin-left: -15%;
 `;
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -105,7 +128,7 @@ const LoginPage = () => {
             <span className="navspans"></span>
             <Link to="/dashboard">DashBoard</Link>
             <span className="navspans"></span>
-            <Link to="/my-profile">My Profile</Link>
+            <Link to="/my-profile">My&nbsp;Profile</Link>
             <span className="navspans"></span>
             <Link to="/help">Help</Link>
           </nav>
