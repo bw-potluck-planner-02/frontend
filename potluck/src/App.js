@@ -11,11 +11,10 @@ import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 
 import DashboardPage from "./components/pages/Dashboard/RenderDashboardPage";
 
-
-const logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "login";
-};
+// const logout = () => {
+//   localStorage.removeItem("token");
+//   window.location.href = "login";
+// }
 
 const StyledBody = styled.div`
   background-color: ${({ theme }) => theme.secondaryColor};
@@ -29,6 +28,7 @@ const StyledBody = styled.div`
     background-color: ${({ theme }) => theme.secondaryColor};
   }
 `;
+
 
 function App() {
   return (
