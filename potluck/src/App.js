@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import styled from "styled-components";
 import theme from "./theme";
 import PrivateRoute from "./utils/PrivateRoute";
 import Potluck from "./components/Potluck";
@@ -15,10 +16,23 @@ const logout = () => {
   window.location.href = "login";
 };
 
+const StyledBody = styled.div`
+  background-color: ${({ theme }) => theme.secondaryColor};
+  header {
+    background-color: ${({ theme }) => theme.primaryColor};
+  }
+  header nav a {
+    ${({ theme }) => theme.secondaryColor};
+  }
+  header nav a:hover {
+    background-color: ${({ theme }) => theme.secondaryColor};
+  }
+`;
+
 function App() {
   return (
     <Router>
-      <div className="App">
+      <StyledBody className="App">
         {/* <header >
           <h1>Potluck Planner</h1>
 
@@ -51,7 +65,7 @@ function App() {
             <RenderLandingPage />
           </Route>
         </Switch>
-      </div>
+      </StyledBody>
     </Router>
   );
 }

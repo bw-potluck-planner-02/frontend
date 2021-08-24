@@ -17,7 +17,9 @@ const initialFormValues = {
   password: "",
 };
 
-const StyledHeader = styled.header``;
+const StyledHeader = styled.header`
+  color: ${({ theme }) => theme.secondaryColor};
+`;
 
 const LoginPage = () => {
   const dispatch = useDispatch();
