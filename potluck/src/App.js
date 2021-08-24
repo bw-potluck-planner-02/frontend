@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
-import theme from "./theme";
+import theme from "./Theme/index";
 import PrivateRoute from "./utils/PrivateRoute";
-import Potluck from "./components/Potluck";
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
-
 import Home from './components/Home'
 // import DashboardPage from "./components/Dashboard"
 
@@ -34,28 +32,12 @@ const StyledBody = styled.div`
 `;
 
 
-
 function App() {
   return (
     <Router>
 
       <div className="App">
-        <header >
-
       <StyledBody className="App">
-        {/* <header >
-
-          <h1>Potluck Planner</h1>
-
-          <nav>
-            <span className="navspans"><Link to="/">Home</Link></span>
-            {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
-            <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
-            <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
-            <span className="navspans"><Link to="/help">Help</Link></span>
-            <span className="navspans"><Link to href="/" onClick={logout}>logout</Link></span>
-          </nav>
-        </header>
         <Switch>
           <PrivateRoute path="/dashboard">
           <DashboardPage />
@@ -65,13 +47,8 @@ function App() {
             <MyProfilePage />
           </PrivateRoute>
 
-          <PrivateRoute path="/potluck">
-            <Potluck />
-          </PrivateRoute>
-
           <Route path="/login">
-
-            <Login />
+            <LoginPage />
           </Route>
 
           <Route path="/landing" >
@@ -85,17 +62,10 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route> 
-
-
-            <LoginPage />
-          </Route>
-
-          <Route path="/">
-            <RenderLandingPage />
-          </Route>
-
+          
         </Switch>
       </StyledBody>
+      </div>
     </Router>
   );
 }
