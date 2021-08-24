@@ -11,6 +11,8 @@ import {
     USER_EVENT_SUCCESS,
     USER_EVENT_ERROR,
 } from '../../../Reducers/userReducer';
+import StyledRegistration from './Styling';
+
 
 const initialFormValues = {
     first_name: '',
@@ -79,112 +81,108 @@ function RenderLandingPage(props) {
                     </nav>
                 </header>
 
-                <div className="content-container">
+                <StyledRegistration>
                     <div className="introduction">
-                        <h1>Oh no! All chips and no meat again?</h1>
+                        <h1>Welcome to Potluck Planner</h1>
                         <p>
-                            Welcome to Potluck planner, the easy way to figure out
+                            an easy way to figure out
                             who’s bringing what to your next potluck.
                         </p>
-                        <h2>
-                            Create your account today. It’s free.{' '}
-                        </h2>
-                        <div>
-
-                            <h1>Don't Miss Out!</h1>
-
-                        </div>
                     </div>
                     <div className="form">
                         <section>
                             <h2>Create an Account to Get Started!</h2>
-                            <form onSubmit={register}>
-                                <div>
-                                    <input
-                                        type="text"
-                                        required
-                                        name="first_name"
-                                        placeholder="First Name"
-                                        value={values.first_name}
-                                        onChange={handleChanges}
-                                    />
-                                    <input
-                                        type="text"
-                                        required
-                                        name="last_name"
-                                        placeholder="Last Name"
-                                        value={values.last_name}
-                                        onChange={handleChanges}
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        value={values.email}
-                                        onChange={handleChanges}
-                                    />
-                                </div>
+                            <div className='registration'>
+                                <form onSubmit={register}>
+                                    <div className='input-box'>
+                                        <input
+                                            type="text"
+                                            required
+                                            name="first_name"
+                                            placeholder="First Name"
+                                            value={values.first_name}
+                                            onChange={handleChanges}
+                                        />
+                                        <input
+                                            type="text"
+                                            required
+                                            name="last_name"
+                                            placeholder="Last Name"
+                                            value={values.last_name}
+                                            onChange={handleChanges}
+                                        />
+                                    {/* </div> */}
+                                    {/* <div className='input-box'> */}
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Email"
+                                            value={values.email}
+                                            onChange={handleChanges}
+                                        />
+                                    {/* </div> */}
 
-                                <div>
-                                    <input
-                                        type="text"
-                                        name="address_one"
-                                        placeholder="Address 1"
-                                        value={values.address_one}
-                                        onChange={handleChanges}
-                                    />
-                                    <input
-                                        type="text"
-                                        name="address_two"
-                                        placeholder="Address 2"
-                                        value={values.address_two}
-                                        onChange={handleChanges}
-                                    />
-                                    <input
-                                        type="text"
-                                        name="city"
-                                        placeholder="City"
-                                        value={values.city}
-                                        onChange={handleChanges}
-                                    />
-                                    <input
-                                        type="text"
-                                        name="zip"
-                                        placeholder="Zip Code"
-                                        value={values.zip}
-                                        onChange={handleChanges}
-                                    />
+                                    {/* <div className='input-box'> */}
+                                        <input
+                                            type="text"
+                                            name="address_one"
+                                            placeholder="Address 1"
+                                            value={values.address_one}
+                                            onChange={handleChanges}
+                                        />
+                                        <input
+                                            type="text"
+                                            name="address_two"
+                                            placeholder="Address 2"
+                                            value={values.address_two}
+                                            onChange={handleChanges}
+                                        />
+                                        <input
+                                            type="text"
+                                            name="city"
+                                            placeholder="City"
+                                            value={values.city}
+                                            onChange={handleChanges}
+                                        />
+                                        <input
+                                            type="text"
+                                            name="zip"
+                                            placeholder="Zip Code"
+                                            value={values.zip}
+                                            onChange={handleChanges}
+                                        />
 
-                                    <Dropdown
-                                        data={states}
-                                        name="state"
-                                        value={values.state}
-                                        onChange={handleChanges}
-                                    />
-                                </div>
+                                        <Dropdown
+                                            data={states}
+                                            name="state"
+                                            value={values.state}
+                                            onChange={handleChanges}
+                                        />
+                                    {/* </div> */}
 
-                                <div>
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        placeholder="password"
-                                        value={values.password}
-                                        onChange={handleChanges}
-                                    />
-                                </div>
+                                    {/* <div className='input-box'> */}
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            placeholder="password"
+                                            value={values.password}
+                                            onChange={handleChanges}
+                                        />
+                                    
+                                    
 
-                                {!state.loading ? (
-                                    <button>CREATE MY ACCOUNT</button>
-                                ) : (
-                                    <button disabled>Loading...</button>
-                                )}
-                            </form>
+                                        {!state.loading ? (
+                                            <button>CREATE MY ACCOUNT</button>
+                                        ) : (
+                                            <button disabled>Loading...</button>
+                                        )}
+                                    </div>
+                                </form>
+                            </div>
 
                         </section>
                     </div>
-                </div>
+                </StyledRegistration>
             </div>
         </>
     );
