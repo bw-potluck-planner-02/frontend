@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import { useAPI } from "../../../components/hooks/useAPI";
 import { useForm } from "../../../components/hooks/useForm";
@@ -14,6 +15,8 @@ const initialFormValues = {
   email: "",
   password: "",
 };
+
+const StyledHeader = styled.header``;
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -57,7 +60,7 @@ const LoginPage = () => {
   return (
     <>
       <div className="page">
-        <header>
+        <StyledHeader>
           <h1>POTLUCK PLANNER</h1>
           <nav>
             <Link to="/landing"> Home</Link>
@@ -68,7 +71,7 @@ const LoginPage = () => {
             <span className="navspans"></span>
             <Link to="/help">Help</Link>
           </nav>
-        </header>
+        </StyledHeader>
         <div className="content-container">
           <div className="form">
             <section>
