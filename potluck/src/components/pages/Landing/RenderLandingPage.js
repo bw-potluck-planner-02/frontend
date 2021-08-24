@@ -103,21 +103,21 @@ function RenderLandingPage(props) {
                                     <input
                                         type="text"
                                         required
-                                        name="first_name"
-                                        placeholder="First Name"
-                                        value={values.first_name}
+                                        name="username"
+                                        placeholder="User name"
+                                        value={values.username}
                                         onChange={handleChanges}
                                     />
-                                    <input
+                                    {/* <input
                                         type="text"
                                         required
                                         name="last_name"
                                         placeholder="Last Name"
                                         value={values.last_name}
                                         onChange={handleChanges}
-                                    />
+                                    /> */}
                                 </div>
-                                <div>
+                                {/* <div>
                                     <input
                                         type="email"
                                         name="email"
@@ -163,7 +163,7 @@ function RenderLandingPage(props) {
                                         value={values.state}
                                         onChange={handleChanges}
                                     />
-                                </div>
+                                </div> */}
 
                                 <div>
                                     <input

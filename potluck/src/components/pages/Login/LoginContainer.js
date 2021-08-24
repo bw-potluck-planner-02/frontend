@@ -11,6 +11,7 @@ import {
   USER_EVENT_ERROR,
 } from "../../../Reducers/userReducer";
 import { SET_CURRENT_USER } from "../../../Reducers/eventsReducer";
+import axios from "axios";
 
 const initialFormValues = {
   username: "",
@@ -92,9 +93,12 @@ const LoginPage = () => {
   const postLogin = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
+    // axios.post('https://potluck-planner-2.herokuapp.com/api/auth/login', {username: "sue", password:"1234"})
       .then((res) => {
-        console.log("POST Login Resp:", res);
-        console.log("TOKEN", res.token);
+
+        console.log('POST Login Resp:', res);
+        console.log('TOKEN-YO YO', res.token);
+
         localStorage.setItem("token", res.token);
         dispatch({
           type: USER_EVENT_SUCCESS,
@@ -162,7 +166,7 @@ const LoginPage = () => {
                   <button disabled>Loading...</button>
                 )}
               </form>
-              ​
+              
             </section>
           </StyledChild>
         </StyledMainPage>

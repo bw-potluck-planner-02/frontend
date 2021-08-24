@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 export const useAPI = config => {
@@ -8,7 +7,9 @@ export const useAPI = config => {
   const { method, url, data } = config;
 
   const moveData = () => {
-    console.log(config);
+    console.log('Here is useApi.js Config',config);
+    //in login case "post, /api/auth/login , sue 1234
+    //
     return axiosWithAuth()
       [method](url, data)
       .then(res => res.data)
@@ -17,6 +18,6 @@ export const useAPI = config => {
         return err;
       });
   };
-  // console.log(dataAPI)
+  console.log('Here is useApi.js dataAPI',dataAPI)
   return [dataAPI, moveData, error];
 };
