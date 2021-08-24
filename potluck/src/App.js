@@ -11,7 +11,6 @@ import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 
 import DashboardPage from "./components/pages/Dashboard/RenderDashboardPage";
 
-
 const logout = () => {
   localStorage.removeItem("token");
   window.location.href = "login";
@@ -22,8 +21,9 @@ const StyledBody = styled.div`
   header {
     background-color: ${({ theme }) => theme.primaryColor};
   }
+
   header nav a {
-    ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.secondaryColor};
   }
   header nav a:hover {
     background-color: ${({ theme }) => theme.secondaryColor};
@@ -47,7 +47,7 @@ function App() {
         </header> */}
         <Switch>
           <PrivateRoute path="/dashboard">
-          <DashboardPage />
+            <DashboardPage />
           </PrivateRoute>
 
           <PrivateRoute path="/my-profile">
