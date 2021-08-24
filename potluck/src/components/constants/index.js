@@ -1,4 +1,4 @@
-// export const API_BASE_URL = 'https://the-potluck-planner.herokuapp.com/';
+export const API_BASE_URL = 'https://potluck-planner-2.herokuapp.com/';
 
 export const states = {
   Alaska: 'Alaska',

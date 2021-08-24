@@ -37,43 +37,40 @@ const StyledBody = styled.div`
 function App() {
   return (
     <Router>
-      <StyledBody className="App">
-        <Switch>
-          <PrivateRoute path="/dashboard">
-            <DashboardPage />
-          </PrivateRoute>
+      <div className="App">
+          <StyledBody className="App">
+            <Switch>
+    
+            <PrivateRoute path="/dashboard">
+              <DashboardPage />
+            </PrivateRoute>
 
-          <PrivateRoute path="/my-profile">
-            <MyProfilePage />
-          </PrivateRoute>
+            <PrivateRoute path="/my-profile">
+              <MyProfilePage />
+            </PrivateRoute>
 
-          <PrivateRoute path="/potluck">
-            <Potluck />
-          </PrivateRoute>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
 
-          <Route path="/login">
-            <LoginPage />
-          </Route>
+            <Route path="/landing" >
+              <RenderLandingPage />
+            </Route>
 
-          <Route path="/landing">
-            <RenderLandingPage />
-          </Route>
+            <Route path="/register">
+              <Registration />
+            </Route>
 
-          <Route path="/register">
-            <Registration />
-          </Route>
-
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route path="/">
-            <RenderLandingPage />
-          </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
         </Switch>
       </StyledBody>
-    </Router>
-  );
+    </div>
+  </Router>
+        );
 }
 
-export default App;
+
+
+        export default App;
