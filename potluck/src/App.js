@@ -9,8 +9,8 @@ import PrivateRoute from "./utils/Private.js";
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
-
 import Home from "./components/Home";
+import Team from './components/Team';
 // import DashboardPage from "./components/Dashboard"
 
 import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
@@ -61,6 +61,10 @@ function App() {
 
             <Route path="/register">
               <Registration />
+            </Route>
+
+            <Route path="/meet-team">
+              <Team />
             </Route>
 
             <Route exact path="/">

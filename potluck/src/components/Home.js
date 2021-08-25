@@ -40,12 +40,18 @@ const StyledHome = styled.div`
     color: #3c6e71;
   }
 
+  .button-container  {
+    display: flex;
+    margin-left: 25%;
+  }
+
   .button-container a {
     display: flex;
     align-items: center;
     background: none;
     margin: 5%;
   }
+
   button {
     background-color: #284b63;
     padding: 15px;
@@ -74,7 +80,7 @@ export default function Home() {
             <Link to="/my-profile">My Profile</Link>
           </span>
           <span className="navspans">
-            <Link to="/help">Help</Link>
+            <Link to="/meet-team">Meet Our Team</Link>
           </span>
         </nav>
       </header>
