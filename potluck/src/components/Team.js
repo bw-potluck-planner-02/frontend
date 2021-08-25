@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
 const StyledTeam = styled.div`
+    display: flex;
+    box-sizing: border-box;
+
+    .whole {
+        width: 100%;
+        height: 100vh;
+    }
+    
+
     .card {
         width: 450px;
     }
@@ -12,9 +21,9 @@ const StyledTeam = styled.div`
         text-align: center;
         margin-left: 20%;
     }
-     /* .card h2 h3 {
-        text-align: justify;
-     } */
+     .card h2 h3 {
+        text-align: left;
+     }
 `
 
 export default function Team() {
