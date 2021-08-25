@@ -1,4 +1,5 @@
-export default {
+const theme = 
+ {
 
   primaryColor: "#284B63",
   secondaryColor: "#D9D9D9",
@@ -7,3 +8,4 @@ export default {
   white: "FFFFFF",
 };
 
+export default theme;
