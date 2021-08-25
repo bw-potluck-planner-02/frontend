@@ -1,47 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useForm } from '../../../components/hooks/useForm';
-import { useAPI } from '../../../components/hooks/useAPI';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useForm } from "../../../components/hooks/useForm";
+import { useAPI } from "../../../components/hooks/useAPI";
+import { useSelector, useDispatch } from "react-redux";
 import {
   ADD_EVENT_START,
   ADD_EVENT_SUCCESS,
   ADD_EVENT_ERROR,
   EDIT_EVENT_SUCCESS,
-} from '../../../Reducers/eventsReducer';
+} from "../../../Reducers/eventsReducer";
 
-import CreateEventProgressBar from '../../../components/CreateEventProgressBar';
-import RenderCreateNewEventPage from './RenderCreateNewEventPage';
-import StepTwoContainer from './StepTwo/StepTwoContainer';
-import StepThreeContainer from './StepThree/StepThreeContainer';
+import CreateEventProgressBar from "../../../components/CreateEventProgressBar";
+import RenderCreateNewEventPage from "./RenderCreateNewEventPage";
+import StepTwoContainer from "./StepTwo/StepTwoContainer";
+import StepThreeContainer from "./StepThree/StepThreeContainer";
 
 const initialFormValues = {
-  potluck_date: '',
-  potluck_name: '',
-  address_one: '',
+  potluck_date: "",
+  potluck_name: "",
+  address_one: "",
   // address_two: '',
-  city: '',
-  state: '',
-  zip: '',
+  city: "",
+  state: "",
+  zip: "",
   // contact_phone: '',
-  potluck_time: '',
+  potluck_time: "",
   // end_time: '',
-  potluck_description: '',
+  potluck_description: "",
 };
 
-const CreateNewEvent = props => {
-  const userState = useSelector(state => state.userReducer);
-  const eventsState = useSelector(state => state.eventsReducer);
+//step1 name, when, where
+//step2 add items to bring
+//step3 fill guest list!
+
+const CreateNewEvent = (props) => {
+  const userState = useSelector((state) => state.userReducer);
+  const eventsState = useSelector((state) => state.eventsReducer);
   const history = useHistory();
-  const buttonText = eventsState.editEvent ? 'SAVE' : 'NEXT STEP';
+  const buttonText = eventsState.editEvent ? "SAVE" : "NEXT STEP";
   const [values, handleChanges, resetForm, setValues] = useForm(
     eventsState.editEvent ? eventsState.currentEvent[0] : initialFormValues
   );
-  const [currentStep, setCurrentStep] = useState('');
+  const [currentStep, setCurrentStep] = useState("");
   const dispatch = useDispatch();
   const [data, moveData, error] = useAPI({
-    method: 'post',
-    url: '/api/potlucks',
+    method: "post",
+    url: "/api/potlucks",
     data: {
       ...values,
       // user_id: userState.user_id.id,
@@ -51,12 +55,11 @@ const CreateNewEvent = props => {
       potluck_time: values.potluck_time,
       potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
       organizer: 3,
-      
     },
   });
 
   const [dataPut, putData, errorPut] = useAPI({
-    method: 'put',
+    method: "put",
     url: `/api/potlucks/:id${eventsState.currentEventID}`,
     data: {
       // ...values,
@@ -67,8 +70,8 @@ const CreateNewEvent = props => {
   const postEvent = () => {
     dispatch({ type: ADD_EVENT_START });
     moveData()
-      .then(res => {
-        console.log('PostEvent Resp: CreateNewEventContainer',res);
+      .then((res) => {
+        console.log("PostEvent Resp: CreateNewEventContainer", res);
         const newEvent = {
           ...res,
           event_id: res.id,
@@ -80,10 +83,10 @@ const CreateNewEvent = props => {
           payload: newEvent,
         });
         // resetForm();
-        setCurrentStep('two');
-        history.push('/dashboard/new-event/step-two');
+        setCurrentStep("two");
+        history.push("/dashboard/new-event/step-two");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         dispatch({ type: ADD_EVENT_ERROR, payload: err });
       });
@@ -92,7 +95,7 @@ const CreateNewEvent = props => {
   const putEvent = () => {
     dispatch({ type: ADD_EVENT_START });
     putData()
-      .then(res => {
+      .then((res) => {
         console.log(res);
         const newEvent = {
           ...res,
@@ -105,10 +108,10 @@ const CreateNewEvent = props => {
           payload: newEvent,
         });
         // resetForm();
-        setCurrentStep('');
-        history.push('/dashboard');
+        setCurrentStep("");
+        history.push("/dashboard");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         dispatch({ type: ADD_EVENT_ERROR, payload: err });
       });
@@ -123,9 +126,9 @@ const CreateNewEvent = props => {
     <section>
       {!eventsState.editing && null}
       <CreateEventProgressBar />
-      {currentStep === 'two' ? (
+      {currentStep === "two" ? (
         <StepTwoContainer setCurrentStep={setCurrentStep} />
-      ) : currentStep === 'three' ? (
+      ) : currentStep === "three" ? (
         <StepThreeContainer setCurrentStep={setCurrentStep} />
       ) : (
         <RenderCreateNewEventPage
