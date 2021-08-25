@@ -1,6 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 
 
 
@@ -42,14 +43,6 @@ const StyledHome = styled.div`
         color: #3C6E71;
     }
 
-    .button-container {
-        display: flex;
-        justify-content: center;
-        width: 40%;
-        justify-content: space-evenly;
-        margin: 0 auto;
-    }
-
     .button-container a {
         display: flex;
         align-items: center;
@@ -64,16 +57,16 @@ const StyledHome = styled.div`
         font-size: 15px;
         color: #D9D9D9;
     }
-
-
-`
+`;
 
 export default function Home() {
-    const routeToPotluck = () => {
+  const routeToPotluck = () => {};
 
-    }
+  return (
+    <StyledHome>
+      <header>
+        <h1>Potluck Planner</h1>
 
-    return (
 
         <StyledHome>
             <header>
@@ -112,3 +105,4 @@ export default function Home() {
         </StyledHome>
     )
 }
+

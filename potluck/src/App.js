@@ -1,8 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
-import theme from "./theme/index";
-import PrivateRoute from "./utils/PrivateRoute";
+
+
+import PrivateRoute from "./utils/Private.js";
+// import theme from "./Theme";
+
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
