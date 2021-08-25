@@ -97,7 +97,7 @@ const RenderCreateNewEventPage = props => (
                 <button disabled>Loading...</button>
               )}
             </div> */}
-            <button>HERE IT IS</button>
+            <button>submit</button>
           </div>
         </div>
       </div>
