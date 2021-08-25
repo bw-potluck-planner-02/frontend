@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
 
-import PrivateRoute from "./utils/PrivateRoute2.js";
+import PrivateRoute from "./utils/Private.js";
 // import theme from "./Theme";
 
 import Potluck from "./components/Potluck";
