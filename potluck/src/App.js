@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
-// import theme from "./Theme";
 import PrivateRoute from "./utils/PrivateRoute.js";
+// import theme from "./Theme";
+
 import Potluck from "./components/Potluck";
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
