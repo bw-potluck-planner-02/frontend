@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
-
-
 const StyledHome = styled.div`
     box-sizing: border-box;
     height: 100vh;
@@ -20,7 +18,7 @@ const StyledHome = styled.div`
     }
 
     .main {
-        background: white;
+        background: #D9D9D9;
         width: 40%;
         margin: 0 auto;
         text-align: center;
@@ -43,12 +41,18 @@ const StyledHome = styled.div`
         color: #3C6E71;
     }
 
+    .button-container {
+        display: flex;
+        margin-left: 25%;
+       
+    }
+
     .button-container a {
         display: flex;
         align-items: center;
         background: none;
         margin: 5%;
-        
+
     }
     button {
         background-color: #284B63 ;
@@ -65,18 +69,13 @@ export default function Home() {
   return (
     <StyledHome>
       <header>
-        <h1>Potluck Planner</h1>
-
-
-        <StyledHome>
-            <header>
                 <h1>POTLUCK PLANNER</h1>
                 <nav>
                     <span className="navspans"><Link to="/">Home</Link></span>
                     {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
                     <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
                     <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
-                    <span className="navspans"><Link to="/help">Help</Link></span>
+                    <span className="navspans"><Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link></span>
                 </nav>
             </header>
             <div className='whole'>
@@ -88,7 +87,7 @@ export default function Home() {
                             <button
                                 onlick={routeToPotluck}
                                 className='create-acctBtn'>
-                                Create an Account
+                                Create&nbsp;an&nbsp;Account
                             </button>
                         </Link>
 
