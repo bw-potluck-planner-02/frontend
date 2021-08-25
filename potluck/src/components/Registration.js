@@ -5,7 +5,6 @@ import React, { useState } from "react";
 const Registration = (props) => {
     const [user, setUser] = useState({
         username: "",
-        name: "",
         password: "",
     });
 
