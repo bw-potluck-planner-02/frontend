@@ -97,6 +97,7 @@ const LoginPage = () => {
       .then((res) => {
         console.log("POST Login Resp:", res);
         console.log("TOKEN-YO YO", res.token);
+
         localStorage.setItem("token", res.token);
         dispatch({
           type: USER_EVENT_SUCCESS,
@@ -164,7 +165,6 @@ const LoginPage = () => {
                   <button disabled>Loading...</button>
                 )}
               </form>
-              ​
             </section>
           </StyledChild>
         </StyledMainPage>
