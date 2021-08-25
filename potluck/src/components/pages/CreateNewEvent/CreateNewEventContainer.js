@@ -44,13 +44,19 @@ const CreateNewEvent = props => {
     url: '/api/potlucks',
     data: {
       ...values,
-      // user_id: userState.user_id.id,
-      potluck_name: values.potluck_name,
-      potluck_description: values.potluck_description,
-      potluck_date: values.potluck_date,
-      potluck_time: values.potluck_time,
-      potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
-      organizer: 3,
+      user_id: userState.user_id,
+
+      // //Event Address
+      // potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
+
+      // //Event Details
+      // potluck_name: values.potluck_name,
+      // potluck_date: values.potluck_date,
+      // potluck_time: values.potluck_time,
+      // potluck_description: values.potluck_description,
+      
+      // //backend ????
+      // organizer: 3,
       
     },
   });
@@ -59,8 +65,8 @@ const CreateNewEvent = props => {
     method: 'put',
     url: `/api/potlucks/:id${eventsState.currentEventID}`,
     data: {
-      // ...values,
-      // user_id: userState.user.id,
+      ...values,
+      user_id: userState.user_id,
     },
   });
 
@@ -68,7 +74,7 @@ const CreateNewEvent = props => {
     dispatch({ type: ADD_EVENT_START });
     moveData()
       .then(res => {
-        console.log('PostEvent Resp: CreateNewEventContainer',res);
+        console.log('PostEvent Resp: CreateNewEventContainer.js',res);
         const newEvent = {
           ...res,
           event_id: res.id,
