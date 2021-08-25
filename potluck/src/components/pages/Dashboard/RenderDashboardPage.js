@@ -11,11 +11,11 @@ import DashboardGuest from "../Dashboard/DashBoardGuestEvents";
 import GuestRsvp from "../../../components/GuestRsvp";
 
 const MainDiv = styled.div`
-  height: 87.5vh;
+  height: 87.8vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
+  background-image: url("https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   background-size: cover;
 
   h1 {
@@ -23,7 +23,7 @@ const MainDiv = styled.div`
     font-size: 3rem;
   }
   button {
-    border-radius: 25px;
+    border-radius: 20px;
     width: 80%;
     height: 40px;
     font-size: 1.3rem;
@@ -45,7 +45,8 @@ const MainDiv = styled.div`
     justify-content: center;
     align-items: center;
     border: none;
-    width: 40%;
+    min-width: 400px;
+    width: 28%;
 
     .attending button {
       border-radius: 25px;
@@ -94,7 +95,7 @@ function RenderDashboardPage() {
           <span className="navspans"></span>
           <Link to="/login"> Login</Link>
           <span className="navspans"></span>
-          <Link to="/my-profile">My Profile</Link>
+          <Link to="/my-profile">My&nbsp;Profile</Link>
           <span className="navspans"></span>
           <Link to="/help">Help</Link>
           <span className="navspans"></span>

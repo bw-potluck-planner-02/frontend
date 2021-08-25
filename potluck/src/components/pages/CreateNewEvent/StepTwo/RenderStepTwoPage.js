@@ -1,15 +1,25 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
 
-const RenderStepTwo = props => (
+const StyledDiv = styled.div`
+  input {
+    text-align: center;
+    padding: 3% 8%;
+    border: none;
+    border-radius: 25px;
+  }
+`;
+
+const RenderStepTwo = (props) => (
   <section>
     <form onSubmit={props.submit}>
       <div className="formContainer">
-        <div className="formColumn">
+        <StyledDiv className="formColumn">
           <h2>What should guests bring?</h2>
           <input
             type="text"
             name="item_name"
-            placeholder="Enter an item for guests to bring"
+            placeholder="Enter items"
             value={props.value}
             onChange={props.handleChanges}
           />
@@ -20,19 +30,19 @@ const RenderStepTwo = props => (
               <button disabled>Loading...</button>
             )}
           </div>
-        </div>
+        </StyledDiv>
         <div className="formColumn">
           <div>
             <h2>Current Items</h2>
           </div>
           <div>
             <ul>
-              {props.state.map(item => (
+              {props.state.map((item) => (
                 <li key={item.id} onClick={() => props.editItem(item)}>
                   <span className="itemList">
                     <span
                       className="delete"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.stopPropagation();
                         props.deleteItem(item.id);
                       }}

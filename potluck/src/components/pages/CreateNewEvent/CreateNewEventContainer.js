@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../../../components/hooks/useForm";
 import { useAPI } from "../../../components/hooks/useAPI";
@@ -9,8 +10,6 @@ import {
   ADD_EVENT_ERROR,
   EDIT_EVENT_SUCCESS,
 } from "../../../Reducers/eventsReducer";
-
-import CreateEventProgressBar from "../../../components/CreateEventProgressBar";
 import RenderCreateNewEventPage from "./RenderCreateNewEventPage";
 import StepTwoContainer from "./StepTwo/StepTwoContainer";
 import StepThreeContainer from "./StepThree/StepThreeContainer";
@@ -32,6 +31,24 @@ const initialFormValues = {
 //step1 name, when, where
 //step2 add items to bring
 //step3 fill guest list!
+
+const StyledContainer = styled.div`
+  padding: 5% 0;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .newEventProgress {
+    display: flex;
+    justify-content: center;
+
+    justify-content: space-evenly;
+    margin: -4%;
+  }
+`;
 
 const CreateNewEvent = (props) => {
   const userState = useSelector((state) => state.userReducer);
@@ -123,9 +140,15 @@ const CreateNewEvent = (props) => {
   };
 
   return (
-    <section>
+    <StyledContainer>
       {!eventsState.editing && null}
-      <CreateEventProgressBar />
+      <h2>Let's Create Your Event</h2>
+      <div className="newEventProgress">
+        {/* Progress bar container */}
+        <h4>STEP 1 </h4>
+        <h4>STEP 2</h4>
+        <h4>STEP 3</h4>
+      </div>
       {currentStep === "two" ? (
         <StepTwoContainer setCurrentStep={setCurrentStep} />
       ) : currentStep === "three" ? (
@@ -139,8 +162,7 @@ const CreateNewEvent = (props) => {
           submit={submit}
         />
       )}
-      ;
-    </section>
+    </StyledContainer>
   );
 };
 
