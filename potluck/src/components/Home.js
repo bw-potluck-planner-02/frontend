@@ -77,7 +77,7 @@ export default function Home() {
 
         <StyledHome>
             <header>
-                <h1>Potluck Planner</h1>
+                <h1>POTLUCK PLANNER</h1>
                 <nav>
                     <span className="navspans"><Link to="/">Home</Link></span>
                     {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
