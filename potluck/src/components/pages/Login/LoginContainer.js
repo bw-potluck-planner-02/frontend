@@ -95,8 +95,8 @@ const LoginPage = () => {
     moveData()
       // axios.post('https://potluck-planner-2.herokuapp.com/api/auth/login', {username: "sue", password:"1234"})
       .then((res) => {
-        console.log("POST Login Resp:", res);
-        console.log("TOKEN-YO YO", res.token);
+        // console.log("POST Login Resp:", res);
+        console.log("TOKEN-YO YO", res);
 
         localStorage.setItem("token", res.token);
         dispatch({
