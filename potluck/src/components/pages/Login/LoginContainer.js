@@ -71,7 +71,7 @@ const StyledChild = styled.div`
     transition: opacity 0.25s ease-out;
   }
   button:hover {
-    background-color: black;
+    opacity: 0.85;
   }
 `;
 const StyledInputs = styled.div`
