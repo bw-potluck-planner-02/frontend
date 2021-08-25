@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
-import theme from "./theme";
-import PrivateRoute from "./utils/PrivateRoute";
-import Potluck from "./components/Potluck";
+
+
+import PrivateRoute from "./utils/Private.js";
+// import theme from "./Theme";
+
 import LoginPage from "./components/pages/Login/LoginContainer";
 import Registration from "./components/Registration";
 import RenderLandingPage from "./components/pages/Landing/RenderLandingPage";
@@ -70,7 +72,6 @@ function App() {
   </Router>
         );
 }
-
 
 
         export default App;

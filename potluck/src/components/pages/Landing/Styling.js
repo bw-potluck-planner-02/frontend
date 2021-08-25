@@ -8,7 +8,6 @@ const StyledRegistration = styled.div`
     margin: 20px;
     height: 80vh;
     width: 95%;
-    border: 1px solid black;
     
     img {
         width: 400px;
@@ -24,7 +23,6 @@ const StyledRegistration = styled.div`
         align-items: center;
         padding-top: 45px;
         width: 50%;
-        border: 1px solid green;
     }
 
     .form {
@@ -34,7 +32,6 @@ const StyledRegistration = styled.div`
         justify-content: space-evenly;
         padding: 10px;
         width: 50%;
-        border: 1px solid red;
     }
 
     .registration {
@@ -47,7 +44,27 @@ const StyledRegistration = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        
+    }
+
+    @media (max-width: 900px){
+        img {
+            height: 250px;
+            width: 300px;
+        }
+    }
+
+    @media (max-width: 650px){
+        img {
+            height: 200px;
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        img{
+            height: 150px;
+            width: 200px;
+        }
     }
     
 `

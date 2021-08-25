@@ -11,6 +11,7 @@ import {
   USER_EVENT_ERROR,
 } from "../../../Reducers/userReducer";
 import { SET_CURRENT_USER } from "../../../Reducers/eventsReducer";
+import axios from "axios";
 
 const initialFormValues = {
   username: "",
@@ -21,6 +22,63 @@ const StyledHeader = styled.header`
   color: ${({ theme }) => theme.secondaryColor};
 `;
 
+const StyledMainPage = styled.div`
+  background-image: url("https://images.unsplash.com/photo-1559839826-f52348d3e1c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1585&q=80");
+  background-size: cover;
+  height: 85.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin-top: -2%;
+    font-size: 3rem;
+  }
+`;
+
+const StyledChild = styled.div`
+  border: 0px;
+  border-radius: 30px;
+  background-color: #f2f2f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  padding: 0 5%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    input {
+      padding: 8%;
+      border: none;
+      border-radius: 25px;
+    }
+  }
+  button {
+    border-radius: 25px;
+    width: 80%;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, #284b63 100%);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+  }
+  button:hover {
+    opacity: 0.85;
+  }
+`;
+const StyledInputs = styled.div`
+  margin-top: -5%;
+  padding: 15% 0 15% 0;
+  margin-left: -15%;
+`;
 const LoginPage = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.userReducer);
@@ -35,9 +93,11 @@ const LoginPage = () => {
   const postLogin = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
+      // axios.post('https://potluck-planner-2.herokuapp.com/api/auth/login', {username: "sue", password:"1234"})
       .then((res) => {
-        console.log('POST Login Resp:',res);
-        console.log('TOKEN', res.token);
+        console.log("POST Login Resp:", res);
+        console.log("TOKEN-YO YO", res.token);
+
         localStorage.setItem("token", res.token);
         dispatch({
           type: USER_EVENT_SUCCESS,
@@ -71,40 +131,43 @@ const LoginPage = () => {
             <span className="navspans"></span>
             <Link to="/dashboard">DashBoard</Link>
             <span className="navspans"></span>
-            <Link to="/my-profile">My Profile</Link>
+            <Link to="/my-profile">My&nbsp;Profile</Link>
             <span className="navspans"></span>
             <Link to="/help">Help</Link>
           </nav>
         </StyledHeader>
-        <div className="content-container">
-          <div className="form">
+        <StyledMainPage>
+          <StyledChild>
             <section>
-              <h1>Login To Your Account</h1>
+              <h1>Login</h1>
               <form onSubmit={login}>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="username"
-                  value={values.email}
-                  onChange={handleChanges}
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  value={values.password}
-                  onChange={handleChanges}
-                />
+                <StyledInputs>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    value={values.email}
+                    onChange={handleChanges}
+                  />
+                </StyledInputs>
+                <StyledInputs>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={values.password}
+                    onChange={handleChanges}
+                  />
+                </StyledInputs>
                 {!state.loading ? (
                   <button>Log In</button>
                 ) : (
                   <button disabled>Loading...</button>
                 )}
               </form>
-              ​
             </section>
-          </div>
-        </div>
+          </StyledChild>
+        </StyledMainPage>
       </div>
     </>
   );

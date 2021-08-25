@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Switch, useHistory } from 'react-router-dom';
 import { CreateNewEvent } from '../CreateNewEvent';
-import PrivateRoute from '../../../utils/PrivateRoute';
+import PrivateRoute from '../../../utils/Private';
 import { TOGGLE_EDITING } from '../../../Reducers/eventsReducer';
 
 import DashboardHost from '../Dashboard/DashBoardHostEvents';
@@ -20,10 +20,10 @@ function RenderDashboardPage() {
     history.push('/dashboard/new-event');
   };
 
-  const logout = () => {
+  const logout = (e) => {
     localStorage.removeItem("token");
     window.location.href = "login";
-    console.log('LOGGED OUT?:', localStorage.headers.authorization);
+    // console.log('LOGGED OUT?:', localStorage.headers.authorization);
   }
 
   return (

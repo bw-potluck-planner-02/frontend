@@ -92,53 +92,52 @@ function RenderLandingPage(props) {
                     </div>
                     <div className="form">
                         <section>
-                            <h2>Create an Account</h2>
-                            <div className='registration'>
-                                <form onSubmit={register}>
-                                    <div className='input-box'>
-                                        <input
-                                            type="text"
-                                            required
-                                            name="first_name"
-                                            placeholder="First Name"
-                                            value={values.first_name}
-                                            onChange={handleChanges}
-                                        />
-                                        <input
-                                            type="text"
-                                            required
-                                            name="last_name"
-                                            placeholder="Last Name"
-                                            value={values.last_name}
-                                            onChange={handleChanges}
-                                        />
-                                    {/* </div> */}
-                                    {/* <div className='input-box'> */}
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Email"
-                                            value={values.email}
-                                            onChange={handleChanges}
-                                        />
-                                    {/* </div> */}
+                            <h2>Create an Account to Get Started!</h2>
+                            <form onSubmit={register}>
+                                <div>
+                                    <input
+                                        type="text"
+                                        required
+                                        name="username"
+                                        placeholder="User name"
+                                        value={values.username}
+                                        onChange={handleChanges}
+                                    />
+                                    {/* <input
+                                        type="text"
+                                        required
+                                        name="last_name"
+                                        placeholder="Last Name"
+                                        value={values.last_name}
+                                        onChange={handleChanges}
+                                    /> */}
+                                </div>
+                                {/* <div>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={values.email}
+                                        onChange={handleChanges}
+                                    />
+                                </div> */}
 
                                     {/* <div className='input-box'> */}
-                                        <input
+                                        {/* <input
                                             type="text"
                                             name="address_one"
                                             placeholder="Address 1"
                                             value={values.address_one}
                                             onChange={handleChanges}
-                                        />
-                                        <input
+                                        /> */}
+                                        {/* <input
                                             type="text"
                                             name="address_two"
                                             placeholder="Address 2"
                                             value={values.address_two}
                                             onChange={handleChanges}
-                                        />
-                                        <input
+                                        /> */}
+                                        {/* <input
                                             type="text"
                                             name="city"
                                             placeholder="City"
@@ -151,15 +150,15 @@ function RenderLandingPage(props) {
                                             placeholder="Zip Code"
                                             value={values.zip}
                                             onChange={handleChanges}
-                                        />
+                                        /> */}
 
-                                        <Dropdown
-                                            data={states}
-                                            name="state"
-                                            value={values.state}
-                                            onChange={handleChanges}
-                                        />
-                                    {/* </div> */}
+                                    {/* <Dropdown
+                                        data={states}
+                                        name="state"
+                                        value={values.state}
+                                        onChange={handleChanges}
+                                    /> */}
+                                {/* </div> */}
 
                                     {/* <div className='input-box'> */}
                                         <input
@@ -177,9 +176,9 @@ function RenderLandingPage(props) {
                                         ) : (
                                             <button disabled>Loading...</button>
                                         )}
-                                    </div>
+                                    {/* </div> */}
                                 </form>
-                            </div>
+                            {/* </div> */}
 
                         </section>
                     </div>
