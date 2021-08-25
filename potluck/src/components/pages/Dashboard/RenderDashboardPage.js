@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Switch, useHistory } from 'react-router-dom';
 import { CreateNewEvent } from '../CreateNewEvent';
-import PrivateRoute from '../../../utils/PrivateRoute';
+import PrivateRoute from '../../../utils/PrivateRoute2';
 import { TOGGLE_EDITING } from '../../../Reducers/eventsReducer';
 
 import DashboardHost from '../Dashboard/DashBoardHostEvents';
