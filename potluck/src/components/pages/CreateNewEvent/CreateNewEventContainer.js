@@ -41,7 +41,7 @@ const CreateNewEvent = props => {
   const dispatch = useDispatch();
   const [data, moveData, error] = useAPI({
     method: 'post',
-    url: '/event',
+    url: '/api/potlucks',
     data: {
       ...values,
       user_id: userState.user.id,
@@ -50,7 +50,7 @@ const CreateNewEvent = props => {
 
   const [dataPut, putData, errorPut] = useAPI({
     method: 'put',
-    url: `/event/${eventsState.currentEventID}`,
+    url: `/api/potlucks/:id${eventsState.currentEventID}`,
     data: {
       ...values,
       user_id: userState.user.id,

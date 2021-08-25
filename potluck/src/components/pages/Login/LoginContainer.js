@@ -13,7 +13,7 @@ import {
 import { SET_CURRENT_USER } from "../../../Reducers/eventsReducer";
 
 const initialFormValues = {
-  email: "",
+  username: "",
   password: "",
 };
 
@@ -28,7 +28,7 @@ const LoginPage = () => {
   let history = useHistory();
   const [data, moveData, error] = useAPI({
     method: "post",
-    url: "/user/login",
+    url: "/api/auth/login",
     data: values,
   });
 
@@ -36,15 +36,16 @@ const LoginPage = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
       .then((res) => {
-        // console.log(res);
+        console.log('POST Login Resp:',res);
+        console.log('TOKEN', res.token);
         localStorage.setItem("token", res.token);
         dispatch({
           type: USER_EVENT_SUCCESS,
-          payload: res.user,
+          payload: res.username,
         });
         dispatch({
           type: SET_CURRENT_USER,
-          payload: res.user.id,
+          payload: res.user_id,
         });
         history.push("/dashboard");
         resetForm();
@@ -82,8 +83,8 @@ const LoginPage = () => {
               <form onSubmit={login}>
                 <input
                   type="text"
-                  name="email"
-                  placeholder="email"
+                  name="username"
+                  placeholder="username"
                   value={values.email}
                   onChange={handleChanges}
                 />
