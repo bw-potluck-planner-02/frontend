@@ -3,8 +3,9 @@ import React from 'react';
 import Dropdown from '../../../components/DropDown';
 import { states } from '../../../components/constants/index';
 
-const RenderCreateNewEventPage = props => (
-  // console.log(props)
+const RenderCreateNewEventPage = props => {
+  console.log('PROPS for RednerCreateNewEvent', props.loading)
+  return (
   <section>
     <form onSubmit={props.submit}>
       <div className="formContainer">
@@ -92,6 +93,7 @@ const RenderCreateNewEventPage = props => (
             />
             {/* <div>
               {!props.loading ? (
+                
                 <button>{props.buttonText}</button>
               ) : (
                 <button disabled>Loading...</button>
@@ -103,6 +105,8 @@ const RenderCreateNewEventPage = props => (
       </div>
     </form>
   </section>
-);
+  
+  )
+              };
 
 export default RenderCreateNewEventPage;
