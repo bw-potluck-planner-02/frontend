@@ -26,13 +26,20 @@ const StyledHome = styled.div`
         display: flex;
         flex-direction: column;
         margin-top: 10%;
+        border: 10px double #284B63;
     }
     
     .main h1 {
         margin: 0 auto;
-        font-size: 70px;
+        font-size: 60px;
         text-align: center;
-        padding: 
+        color: #284B63;
+    }
+
+    .main h3 {
+        padding: 3%;
+        font-size: 15px;
+        color: #3C6E71;
     }
 
     .button-container {
@@ -55,6 +62,7 @@ const StyledHome = styled.div`
         padding: 15px;
         text-decoration: none;
         font-size: 15px;
+        color: #D9D9D9;
     }
 
 
@@ -80,7 +88,8 @@ export default function Home() {
             </header>
             <div className='whole'>
                 <div className='main'>
-                    <h1>Potluck Planning Made Easy</h1>
+                    <h3>Tired of being the one stuck planning EVERY potluck? Well, let us make it easier.</h3>
+                    <h1>Welcome to<br/>The Potluck Planner</h1>
                     <div className='button-container'>
                         <Link to='/landing'>
                             <button
