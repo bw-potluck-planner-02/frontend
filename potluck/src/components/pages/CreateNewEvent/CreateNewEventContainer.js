@@ -37,6 +37,7 @@ const StyledContainer = styled.div`
 
   h2 {
     font-size: 2.5rem;
+    margin: -1%;
   }
   h3 {
     font-size: 1.5rem;
@@ -143,12 +144,6 @@ const CreateNewEvent = (props) => {
     <StyledContainer>
       {!eventsState.editing && null}
       <h2>Let's Create Your Event</h2>
-      <div className="newEventProgress">
-        {/* Progress bar container */}
-        <h4>STEP 1 </h4>
-        <h4>STEP 2</h4>
-        <h4>STEP 3</h4>
-      </div>
       {currentStep === "two" ? (
         <StepTwoContainer setCurrentStep={setCurrentStep} />
       ) : currentStep === "three" ? (
