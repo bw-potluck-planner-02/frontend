@@ -1,155 +1,128 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import '../../../index.css';
-import { states } from '../../constants/index';
-import { useForm } from '../../hooks/useForm';
-// import { useAPI } from '../../hooks/useAPI';
-import { axiosWithAuth } from '../../../utils/axiosWithAuth';
-import { useSelector, useDispatch } from 'react-redux';
-import Dropdown from '../../DropDown';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import "../../../index.css";
+import { states } from "../../constants/index";
+import { useForm } from "../../hooks/useForm";
+import { useAPI } from "../../hooks/useAPI";
+import { useSelector, useDispatch } from "react-redux";
+import Dropdown from "../../DropDown";
 import {
-    USER_EVENT_START,
-    USER_EVENT_SUCCESS,
-    USER_EVENT_ERROR,
-} from '../../../Reducers/userReducer';
-import StyledRegistration from './Styling';
-import axios from 'axios';
-
-
+  USER_EVENT_START,
+  USER_EVENT_SUCCESS,
+  USER_EVENT_ERROR,
+} from "../../../Reducers/userReducer";
+import StyledRegistration from "./Styling";
 
 const initialFormValues = {
-    // first_name: '',
-    // last_name: '',
-    // email: '',
-    // address_one: '',
-    // address_two: '',
-    // city: '',
-    // state: '',
-    // zip: '',
-    // password: '',
-    username: "",
-    password: ""
+  first_name: "",
+  last_name: "",
+  email: "",
+  address_one: "",
+  address_two: "",
+  city: "",
+  state: "",
+  zip: "",
+  password: "",
 };
 
 function RenderLandingPage(props) {
-    // make a post request to retrieve a token from the api
-    // when you have handled the token, navigate to the Login route
+  // make a post request to retrieve a token from the api
+  // when you have handled the token, navigate to the Login route
 
-    const dispatch = useDispatch();
-    const state = useSelector(state => state.userReducer);
-    const [setValues, values, handleChanges, resetForm] = useForm(initialFormValues);
-    const [anyValue, setAnyvalue] = useState("");
-    let history = useHistory();
-    // const [data, moveData, error] = useAPI({
-    //     method: 'post',
-    //     url: '/user/register',
-    //     data: anyValue,
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.userReducer);
+  const [values, handleChanges, resetForm] = useForm(initialFormValues);
+  let history = useHistory();
+  const [data, moveData, error] = useAPI({
+    method: "post",
+    url: "/user/register",
+    data: values,
+  });
 
-    // });
-
-
-
-    const postRegister = () => {
-        // dispatch({ type: USER_EVENT_START });
-       axios
-       .post('https://potluck-planner-2.herokuapp.com/api/auth/register', anyValue)
-            .then(res => {
-                console.log("XXXXXXXX",res);
-                localStorage.setItem('token', res.token);
-                dispatch({
-                    type: USER_EVENT_SUCCESS,
-                    payload: res.user,
-                });
-                console.log(state);
-                history.push('/dashboard');
-                resetForm();
-            })
-            .catch(err => {
-                console.log(err);
-                dispatch({ type: USER_EVENT_ERROR, payload: err });
-            });
-    };
-    // const somedam = (e) => {
-    //     console.log('click');
-    // }
-    // const register = e => {
-    //     e.preventDefault();
-    //     // console.log(values);
-    //     postRegister();
-    // };
-    // // console.log('handle Changes: ', handleChanges);
-    const clever = event => {
-        // console.log('',event.target.name);
-        // console.log('', event.target.value);
-        setAnyvalue({
-            ...anyValue,
-            [event.target.name]: event.target.value
+  const postRegister = () => {
+    dispatch({ type: USER_EVENT_START });
+    moveData()
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("token", res.token);
+        dispatch({
+          type: USER_EVENT_SUCCESS,
+          payload: res.user,
         });
-    };
-    console.log('clever HERE: ', anyValue);
-    return (
-        
-        <>
-            <div className="page">
-            
-                <header>
-                    <h1>POTLUCK PLANNER</h1>
-                    <nav>
-                        <Link to="/login"> Login</Link>
-                        <span className="navspans"></span>
-                        <Link to="/dashboard">DashBoard</Link>
-                        <span className="navspans"></span>
-                        <Link to="/my-profile">My Profile</Link>
-                        <span className="navspans"></span>
-                        <Link to="/help">Help</Link>
-                    </nav>
-                </header>
-                
-                <StyledRegistration>
-               
-                    <div className="introduction">
-                    
-                        <h1>Welcome to Potluck Planner</h1>
-                       
-                        <p>
-                            an easy way to figure out
-                            who’s bringing what to your next potluck
-                        </p>
-                        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt='potluck table' />
-                    </div>
-                    <div className="form">
-                        <section>
-                            <h2>Create an Account to Get Started!</h2>
-                            <form onSubmit={register}>
-                                <div className='input-box'>
-                                    <input
-                                        type="text"
-                                        required
-                                        name="username"
-                                        placeholder="username"
-                                        value={values.username}
-                                        onChange={handleChanges}
-                                    />
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        placeholder="password"
-                                        value={values.password}
-                                        onChange={handleChanges}
-                                    />
+        console.log(state);
+        history.push("/dashboard");
+        resetForm();
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch({ type: USER_EVENT_ERROR, payload: err });
+      });
+  };
 
-                                        {!state.loading ? (
-                                        <button>CREATE MY ACCOUNT</button>
-                                        ) : (
-                                        <button disabled>Loading...</button>
-                                    )}
-                                </div>
-                            </form>
-                        </section>
-                    </div>
-                </StyledRegistration>
-            </div>
-        </>
-    );
+  const register = (e) => {
+    e.preventDefault();
+    // console.log(values);
+    postRegister();
+  };
+  return (
+    <>
+      <div className="page">
+        <header>
+          <h1>POTLUCK PLANNER</h1>
+          <nav>
+            <Link to="/login"> Login</Link>
+            <span className="navspans"></span>
+            <Link to="/dashboard">DashBoard</Link>
+            <span className="navspans"></span>
+            <Link to="/my-profile">My Profile</Link>
+            <span className="navspans"></span>
+            <Link to="/help">Help</Link>
+          </nav>
+        </header>
+
+        <StyledRegistration>
+          <div className="introduction">
+            <h1>Welcome to Potluck Planner</h1>
+            <p>
+              an easy way to figure out who's bringing what to your next potluck
+            </p>
+            <img
+              src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              alt="potluck table"
+            />
+          </div>
+          <div className="form">
+            <section>
+              <h2>Create an Account to Get Started!</h2>
+              <form onSubmit={register}>
+                <div className="input-box">
+                  <input
+                    type="text"
+                    required
+                    name="username"
+                    placeholder="username"
+                    value={values.username}
+                    onChange={handleChanges}
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={values.password}
+                    onChange={handleChanges}
+                  />
+                  {!state.loading ? (
+                    <button>CREATE MY ACCOUNT</button>
+                  ) : (
+                    <button disabled>Loading...</button>
+                  )}
+                </div>
+              </form>
+            </section>
+          </div>
+        </StyledRegistration>
+      </div>
+    </>
+  );
 }
 export default RenderLandingPage;
