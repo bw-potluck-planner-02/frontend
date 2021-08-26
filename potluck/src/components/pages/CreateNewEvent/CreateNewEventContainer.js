@@ -9,6 +9,7 @@ import {
   ADD_EVENT_SUCCESS,
   ADD_EVENT_ERROR,
   EDIT_EVENT_SUCCESS,
+  eventsReducer,
 } from "../../../Reducers/eventsReducer";
 import RenderCreateNewEventPage from "./RenderCreateNewEventPage";
 import StepTwoContainer from "./StepTwo/StepTwoContainer";
@@ -28,7 +29,7 @@ const initialFormValues = {
   // zip: "",
   // contact_phone: '',
   // end_time: '',
-  
+
 };
 
 //step1 name, when, where
@@ -62,6 +63,8 @@ const CreateNewEvent = (props) => {
   const [values, handleChanges, resetForm, setValues] = useForm(
     eventsState.editEvent ? eventsState.currentEvent[0] : initialFormValues
   );
+  // console.log(userState)
+  // console.log(eventsState)
   const [currentStep, setCurrentStep] = useState("");
   const dispatch = useDispatch();
   const [data, moveData, error] = useAPI({
@@ -69,19 +72,7 @@ const CreateNewEvent = (props) => {
     url: "/api/potlucks",
     data: {
       ...values,
-      // organizer: userState.user_id, 
-      organizer: 3,
-      //       // //Event Address
-      // potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
-
-      // //Event Details
-      // potluck_name: values.potluck_name,
-      // potluck_date: values.potluck_date,
-      // potluck_time: values.potluck_time,
-      // potluck_description: values.potluck_description,
-      
-      // //backend ????
-      // organizer: 3,     
+      organizer: eventsState.currentUser
     },
   });
 
@@ -98,7 +89,7 @@ const CreateNewEvent = (props) => {
     dispatch({ type: ADD_EVENT_START });
     moveData()
       .then(res => {
-        console.log('PostEvent Resp: CreateNewEventContainer.js',res);
+        // console.log('PostEvent Resp: CreateNewEventContainer.js', res);
         const newEvent = {
           ...res,
           event_id: res.potluck_id,
@@ -123,7 +114,7 @@ const CreateNewEvent = (props) => {
     dispatch({ type: ADD_EVENT_START });
     putData()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const newEvent = {
           ...res,
           event_id: res.id,

@@ -45,7 +45,7 @@ const StyledContainer = styled.div`
 `;
 
 const RenderCreateNewEventPage = (props) => {
-  console.log("PROPS for RednerCreateNewEvent", props.loading);
+  // console.log("PROPS for RednerCreateNewEvent", props.loading);
   return (
     <StyledContainer>
       <form onSubmit={props.submit}>
@@ -106,7 +106,7 @@ const RenderCreateNewEventPage = (props) => {
           /> */}
             <input
               // type="date"
-              type="text"
+              type="date"
               name="potluck_date"
               placeholder="Date? Format = 2021-08-26"
               value={props.values.potluck_date}

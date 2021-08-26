@@ -54,13 +54,13 @@ function RenderLandingPage(props) {
         axios
             .post('https://potluck-planner-2.herokuapp.com/api/auth/register', anyValue)
             .then(res => {
-                console.log("XXXX SEE ME XXXX", res);
+                // console.log("XXXX SEE ME XXXX", res);
                 localStorage.setItem('token', res.token);
                 dispatch({
                     type: USER_EVENT_SUCCESS,
                     payload: res.user,
                 });
-                console.log(state);
+                // console.log(state);
                 history.push('/dashboard');
                 resetForm();
             })
@@ -84,7 +84,7 @@ function RenderLandingPage(props) {
             [event.target.name]: event.target.value
         });
     };
-    console.log('clever HERE: ', anyValue);
+    // console.log('clever HERE: ', anyValue);
     return (
 
         <>
