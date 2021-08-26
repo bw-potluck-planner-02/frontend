@@ -99,7 +99,7 @@ function RenderLandingPage(props) {
                         <span className="navspans"></span>
                         <Link to="/my-profile">My Profile</Link>
                         <span className="navspans"></span>
-                        <Link to="/help">Help</Link>
+                        <Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link>
                     </nav>
                 </header>
 

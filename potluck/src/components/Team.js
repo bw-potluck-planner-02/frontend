@@ -90,7 +90,7 @@ export default function Team() {
                     alt='profile pic of tranequa'
                     />
                     <h2>TraNequa Fauntleroy</h2>
-                    <h3>Created and styled the homepage and this contribution page</h3>
+                    <h3>Created home and team's components and styled them both</h3>
                     <p>TraNequa is an interme</p>
                 </div>
                 <div className='card'>
