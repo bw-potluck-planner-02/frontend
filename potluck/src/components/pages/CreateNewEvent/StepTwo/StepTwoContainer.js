@@ -95,7 +95,7 @@ const StepTwoContainer = props => {
   const submit = e => {
     e.preventDefault();
     !editing ? postItem() : putItem();
-    postItem()
+    
   };
 
   const editItem = e => {
