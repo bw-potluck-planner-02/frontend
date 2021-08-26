@@ -110,12 +110,11 @@ export default function Home() {
           <span className="navspans">
             <Link to="/">Home</Link>
           </span>
-          {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
           <span className="navspans">
             <Link to="/dashboard">DashBoard</Link>
           </span>
           <span className="navspans">
-            <Link to="/my-profile">My Profile</Link>
+            <Link to="/my-profile">My&nbsp;Profile</Link>
           </span>
           <span className="navspans">
             <Link to="/meet-team">Meet&nbsp;Our&nbsp;Team</Link>

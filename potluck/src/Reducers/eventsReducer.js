@@ -28,7 +28,7 @@ const initialState = {
   events: [],
   currentEvent: '',
   currentEventID: '',
-  currentUser: '',
+  currentUser: 0,
   loading: false,
   error: '',
   editing: false,
