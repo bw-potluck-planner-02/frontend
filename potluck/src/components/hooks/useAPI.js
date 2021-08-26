@@ -18,6 +18,6 @@ export const useAPI = config => {
         return err;
       });
   };
-  console.log('Here is useApi.js dataAPI',dataAPI)
+  // console.log('Here is useApi.js dataAPI', dataAPI)
   return [dataAPI, moveData, error];
 };

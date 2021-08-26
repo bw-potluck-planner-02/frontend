@@ -1,10 +1,20 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
 
-const RenderStepThree = props => (
+const StyledInputs = styled.div`
+  input {
+    text-align: center;
+    padding: 3% 8%;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 2%;
+  }
+`;
+const RenderStepThree = (props) => (
   <section>
     <form onSubmit={props.submit}>
       <div className="formContainer">
-        <div className="formColumn">
+        <StyledInputs className="formColumn innputone">
           <h2>Who is coming?</h2>
           <input
             type="text"
@@ -27,19 +37,19 @@ const RenderStepThree = props => (
               <button disabled>Loading...</button>
             )}
           </div>
-        </div>
+        </StyledInputs>
         <div className="formColumn">
           <div>
             <h2>Guest List</h2>
           </div>
           <div>
             <ul>
-              {props.state.map(item => (
+              {props.state.map((item) => (
                 <li key={item.id} onClick={() => props.editItem(item)}>
                   <span className="itemList">
                     <span
                       className="delete"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.stopPropagation();
                         props.deleteItem(item.id);
                       }}
