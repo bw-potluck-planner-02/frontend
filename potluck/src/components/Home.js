@@ -72,7 +72,6 @@ export default function Home() {
           <span className="navspans">
             <Link to="/">Home</Link>
           </span>
-          {/* <span className="navspans"><Link to="/login">Login</Link></span> */}
           <span className="navspans">
             <Link to="/dashboard">DashBoard</Link>
           </span>
