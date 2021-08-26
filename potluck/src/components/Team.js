@@ -3,27 +3,65 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
 const StyledTeam = styled.div`
-    display: flex;
     box-sizing: border-box;
 
     .whole {
         width: 100%;
-        height: 100vh;
+        height: 100%;
+        background-color: #D9D9D9;
+    }
+
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 2%;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
     }
     
-
     .card {
-        width: 450px;
+        width: 300px;
+        padding: 1%;
+        box-shadow: 5px 10px #284b63;
+        border: 1px solid black;
+        margin-bottom: 2%;
+        margin-right: 1%;
+    }
+    .card p {
+        text-align: center;
     }
 
-    .card p {
-        width: 300px;
-        text-align: center;
-        margin-left: 20%;
+    .heading h1 {
+        font-size: 50px;
+        color: white;
+        flex-direction: row;
+        background-color: #284b63;
+        box-shadow: 5px 5px gray;
+        width: 35%;
+        margin: 0 auto;
+    
     }
-     .card h2 h3 {
+
+    h2 {
         text-align: left;
+        color: #284b63;
+        margin: 0;
      }
+
+    h3 {
+        text-align: center;
+        color: #284b63;
+        font-size: 12px;
+    }
+
+    header {
+        margin-bottom: 2%;
+    }
 `
 
 export default function Team() {
@@ -39,16 +77,102 @@ export default function Team() {
                     <span className="navspans"><Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link></span>
                 </nav>
             </header>
-            <h1>Meet Our Team</h1>
-            <div className='card'>
-                <img
-                className='card-photo'
-                src='https://picsum.photos/300'
-                alt='profile-pic'
-                />
-                <h2>Name of person</h2>
-                <h3>Role of team member</h3>
-                <p>a bunch of filler text. we only need a few sentences for the bio </p>
+
+            <div className='heading'>
+                <h1>Meet Our Team</h1>
+            </div>
+
+            <div className='main'>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://avatars.githubusercontent.com/u/86528475?v=4'
+                    alt='profile pic of tranequa'
+                    />
+                    <h2>TraNequa Fauntleroy</h2>
+                    <h3>Created and styled the homepage and this contribution page</h3>
+                    <p>TraNequa is an interme</p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://media-exp1.licdn.com/dms/image/C5603AQFzQzwScHO3Sw/profile-displayphoto-shrink_800_800/0/1627430907751?e=1635379200&v=beta&t=GiahkmfDSOw0jf8bdeDndYgAr4_APWawgFJWi_7vS2Y'
+                    alt='profile pic for monica'
+                    />
+                    <h2>Monica Salas</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://picsum.photos/300'
+                    alt='profile of jonah'
+                    />
+                    <h2>Jonah Tillman</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://avatars.githubusercontent.com/u/16638790?v=4'
+                    alt='profile pic for rick'
+                    />
+                    <h2>Rick Mansfield</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://picsum.photos/300'
+                    alt='profile-pic'
+                    />
+                    <h2>Name of person</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://picsum.photos/300'
+                    alt='profile-pic'
+                    />
+                    <h2>Name of person</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://avatars.githubusercontent.com/u/61172495?v=4'
+                    alt='profile pic for connor'
+                    />
+                    <h2>Connor Rayburn</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://avatars.githubusercontent.com/u/77372140?v=4'
+                    alt='profile pic for amanuel'
+                    />
+                    <h2>Amanuel Gilay</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://avatars.githubusercontent.com/u/81659057?v=4'
+                    alt='profile pic for cara'
+                    />
+                    <h2>Cara Locke</h2>
+                    <h3>Role of team member</h3>
+                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
             </div>
         </div>
        </StyledTeam> 
