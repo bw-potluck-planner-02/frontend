@@ -91,7 +91,6 @@ export default function Team() {
                     />
                     <h2>TraNequa Fauntleroy</h2>
                     <h3>Created home and team's components and styled them both</h3>
-                    <p>TraNequa is an interme</p>
                 </div>
                 <div className='card'>
                     <img
@@ -101,17 +100,15 @@ export default function Team() {
                     />
                     <h2>Monica Salas</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
                 <div className='card'>
                     <img
                     className='card-photo'
-                    src='https://picsum.photos/300'
+                    src='https://picsum.photos/301'
                     alt='profile of jonah'
                     />
                     <h2>Jonah Tillman</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
                 <div className='card'>
                     <img
@@ -121,7 +118,15 @@ export default function Team() {
                     />
                     <h2>Rick Mansfield</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
+                </div>
+                <div className='card'>
+                    <img
+                    className='card-photo'
+                    src='https://picsum.photos/302'
+                    alt='profile-pic'
+                    />
+                    <h2>Name of person</h2>
+                    <h3>Role of team member</h3>
                 </div>
                 <div className='card'>
                     <img
@@ -131,17 +136,6 @@ export default function Team() {
                     />
                     <h2>Name of person</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
-                </div>
-                <div className='card'>
-                    <img
-                    className='card-photo'
-                    src='https://picsum.photos/300'
-                    alt='profile-pic'
-                    />
-                    <h2>Name of person</h2>
-                    <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
                 <div className='card'>
                     <img
@@ -151,7 +145,6 @@ export default function Team() {
                     />
                     <h2>Connor Rayburn</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
                 <div className='card'>
                     <img
@@ -161,7 +154,6 @@ export default function Team() {
                     />
                     <h2>Amanuel Gilay</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
                 <div className='card'>
                     <img
@@ -171,7 +163,6 @@ export default function Team() {
                     />
                     <h2>Cara Locke</h2>
                     <h3>Role of team member</h3>
-                    <p>a bunch of filler text. we only need a few sentences for the bio </p>
                 </div>
             </div>
         </div>
