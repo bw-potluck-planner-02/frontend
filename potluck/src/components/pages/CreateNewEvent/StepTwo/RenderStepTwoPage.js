@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `;
 
 const RenderStepTwo = (props) => {
-  console.log(props)
+
   return(
   <section>
     <form onSubmit={props.submit}>
@@ -52,7 +52,7 @@ const RenderStepTwo = (props) => {
                     >
                       X&nbsp;&nbsp;
                     </span>
-                    {item.item_name}
+                    {item.food_name}
                   </span>
                 </li>
               ))}

@@ -90,15 +90,22 @@ const LoginPage = () => {
     data: values,
   });
 
+  const login = (e) => {
+    e.preventDefault();
+    postLogin();
+  };
+
   const postLogin = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
+    //the axios.post is obsolete code. See src/hooks/usrApi
       // axios.post('https://potluck-planner-2.herokuapp.com/api/auth/login', {username: "sue", password:"1234"})
       .then((res) => {
         // console.log("POST Login Resp:", res);
-        console.log("TOKEN-YO YO", res);
+        // console.log("TOKEN-YO YO", res);
 
         localStorage.setItem("token", res.token);
+        localStorage.setItem("id", res.user_id )
         dispatch({
           type: USER_EVENT_SUCCESS,
           payload: res.username,
@@ -116,10 +123,7 @@ const LoginPage = () => {
       });
   };
 
-  const login = (e) => {
-    e.preventDefault();
-    postLogin();
-  };
+
 
   return (
     <>
@@ -133,7 +137,7 @@ const LoginPage = () => {
             <span className="navspans"></span>
             <Link to="/my-profile">My&nbsp;Profile</Link>
             <span className="navspans"></span>
-            <Link to="/help">Help</Link>
+            <Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link>
           </nav>
         </StyledHeader>
         <StyledMainPage>

@@ -98,7 +98,7 @@ function RenderDashboardPage() {
           <span className="navspans"></span>
           <Link to="/my-profile">My&nbsp;Profile</Link>
           <span className="navspans"></span>
-          <Link to="/help">Help</Link>
+          <Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link>
           <span className="navspans"></span>
           <Link to href="/" onClick={logout}>
             Logout
@@ -107,7 +107,6 @@ function RenderDashboardPage() {
       </header>
       <MainDiv className="page">
         <div className="content-container">
-          {/*Going to update next div with classname "dashboard-container" that should increase font add colors, waiting until its complete*/}
           <div className="dashboard-container">
             <div className="formColumn">
               {!eventsState.editing ? (

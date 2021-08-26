@@ -13,7 +13,8 @@ import {
 import { axiosWithAuth } from '../../../../utils/axiosWithAuth';
 
 const initialFormValues = {
-  item_name: '',
+  food_name:"",
+  food_description:"",
 };
 
 const StepTwoContainer = props => {
@@ -29,10 +30,10 @@ const StepTwoContainer = props => {
   console.log(eventsState)
   const [data, moveData, error] = useAPI({
     method: 'post',
-    url: '/menu',
+    url: '/api/foods ',
     data: {
-      item_name: values.item_name,
-      event_id: eventsState.currentEvent.id,
+      food_name: values.item_name,
+      food_description:"",
     },
   });
   const [dataPut, putData, errorPut] = useAPI({
@@ -47,15 +48,18 @@ const StepTwoContainer = props => {
     dispatch({ type: ADD_ITEM_START });
     moveData()
       .then(res => {
+        console.log('Food Added response',res)
         const new_item = {
-          event_id: res.event_id,
-          id: res.id,
-          item_name: res.item_name,
+          food_id: res.food_id,
+          // potluck_id: res.potluck.id,
+          food_name: res.food_name,
         };
+        console.log('new_item', new_item);
         dispatch({
           type: ADD_ITEM_SUCCESS,
           payload: new_item,
         });
+        console.log('StepTwo eventsState', eventsState);
         resetForm();
       })
       .catch(err => {
@@ -91,6 +95,7 @@ const StepTwoContainer = props => {
   const submit = e => {
     e.preventDefault();
     !editing ? postItem() : putItem();
+    postItem()
   };
 
   const editItem = e => {

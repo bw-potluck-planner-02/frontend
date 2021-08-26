@@ -54,9 +54,9 @@ const RenderCreateNewEventPage = (props) => {
             <h3>Event Address</h3>
             <input
               type="text"
-              name="address_one"
-              placeholder="Address Line One"
-              value={props.values.address_one}
+              name="potluck_location"
+              placeholder="Potluck Location"
+              value={props.values.potluck_location}
               onChange={props.handleChanges}
             />
             {/* <input
@@ -66,34 +66,34 @@ const RenderCreateNewEventPage = (props) => {
             value={props.values.address_two}
             onChange={props.handleChanges}
           /> */}
-            <input
+            {/* <input
               type="text"
               name="city"
               placeholder="City"
               value={props.values.city}
               onChange={props.handleChanges}
-            />
-            <Dropdown
+            /> */}
+            {/* <Dropdown
               className="dropdown"
               data={states}
               name="state"
               value={props.values.state}
               onChange={props.handleChanges}
-            />
-            <input
+            /> */}
+            {/* <input
               type="text"
               name="zip"
               placeholder="Zip"
               value={props.values.zip}
               onChange={props.handleChanges}
-            />
+            /> */}
           </div>
           <div className="formColumn event-details">
             <h3>Event Details</h3>
             <input
               type="text"
               name="potluck_name"
-              placeholder="potluck_name"
+              placeholder="Name Your Potluck"
               value={props.values.potluck_name}
               onChange={props.handleChanges}
             />
@@ -105,9 +105,10 @@ const RenderCreateNewEventPage = (props) => {
             onChange={props.handleChanges}
           /> */}
             <input
+              // type="date"
               type="date"
               name="potluck_date"
-              placeholder="potluck_date"
+              placeholder="Date? Format = 2021-08-26"
               value={props.values.potluck_date}
               onChange={props.handleChanges}
             />
@@ -115,7 +116,7 @@ const RenderCreateNewEventPage = (props) => {
               <input
                 type="text"
                 name="potluck_time"
-                placeholder="potluck_time"
+                placeholder="Time? Format = 12:00:00"
                 value={props.values.potluck_time}
                 onChange={props.handleChanges}
               />
