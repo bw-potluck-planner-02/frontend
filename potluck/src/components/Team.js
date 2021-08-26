@@ -73,7 +73,7 @@ export default function Team() {
                 <nav>
                     <span className="navspans"><Link to="/">Home</Link></span>
                     <span className="navspans"><Link to="/dashboard">DashBoard</Link></span>
-                    <span className="navspans"><Link to="/my-profile">My Profile</Link></span>
+                    <span className="navspans"><Link to="/my-profile">My&nbsp;Profile</Link></span>
                     <span className="navspans"><Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link></span>
                 </nav>
             </header>
