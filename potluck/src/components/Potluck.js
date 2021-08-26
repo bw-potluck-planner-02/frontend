@@ -28,8 +28,8 @@ const Potluck = () => {
         axios.post('http://localhost:5000/api/', formState)
         .then(res => {
             setHost(res.data)
-            console.log(res.data);
-            console.log('Submit Success', res);
+            // console.log(res.data);
+            // console.log('Submit Success', res);
         })
         .catch(err => console.log(err));
     };

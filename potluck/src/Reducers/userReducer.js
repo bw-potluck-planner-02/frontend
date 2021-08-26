@@ -12,9 +12,9 @@ export const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_EVENT_START:
       return {
-        user: {},
+      ...state,
         loading: true,
-        error: '',
+        
       };
     case USER_EVENT_SUCCESS:
       console.log(action.payload);

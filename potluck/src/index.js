@@ -29,7 +29,7 @@ worker.start();
 // MOCKS for testing+++++++++++++++++++
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-console.log("STORE", store.getState());
+// console.log("STORE", store.getState());
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

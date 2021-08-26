@@ -8,7 +8,7 @@ import {
 export const initialState = {
   user: {
     username: "",
-    name: "",
+    // name: "",
     password: "",
     isOrganizer: false,
   },
@@ -53,7 +53,7 @@ export const LoginReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         username: "",
-        name: "",
+        // name: "",
         password: "",
         error: "",
         success: "User Registered",
@@ -63,4 +63,3 @@ export const LoginReducer = (state = initialState, action) => {
   }
 };
 
-// export default LoginReducer;
