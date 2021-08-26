@@ -47,6 +47,7 @@ const MainDiv = styled.div`
     border: none;
     min-width: 400px;
     width: 28%;
+    max-height: 85vh;
 
     .attending button {
       border-radius: 25px;

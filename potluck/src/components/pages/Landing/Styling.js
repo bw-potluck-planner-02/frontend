@@ -8,6 +8,7 @@ const StyledRegistration = styled.div`
     margin: 20px;
     height: 80vh;
     width: 95%;
+    border: 1px solid black;
     
     img {
         width: 400px;
@@ -23,6 +24,7 @@ const StyledRegistration = styled.div`
         align-items: center;
         padding-top: 45px;
         width: 50%;
+        border: 1px solid red;
     }
 
     .form {
@@ -30,22 +32,42 @@ const StyledRegistration = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
         padding: 10px;
         width: 50%;
-    }
-
-    .registration {
-        height: 500px;
-        display: flex;
-        flex-direction: column;
+        border: 3px solid green;
     }
     .input-box {
         height: 60vh;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    input {
+        text-align: center;
     }
 
+    button {
+        border-radius: 25px;
+        width: 80%;
+        height: 40px;
+        font-size: 1.3rem;
+        color: white;
+        font-weight: 700;
+        background: rgb(34, 193, 195);
+        background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, #284B63 100%);
+        border: 0px;
+        cursor: pointer;
+        transition: opacity 0.25s ease-out;
+    }
+    button:hover {
+        opacity: 0.85;
+    }
+
+    /* media queries */
     @media (max-width: 900px){
         img {
             height: 250px;
