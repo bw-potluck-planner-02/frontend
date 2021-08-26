@@ -50,7 +50,7 @@ const StepTwoContainer = props => {
         console.log('Food Added response',res)
         const new_item = {
           food_id: res.food_id,
-          potluck_id: res.potluck.id,
+          // potluck_id: res.potluck.id,
           food_name: res.food_name,
         };
         console.log('new_item', new_item);
@@ -67,33 +67,33 @@ const StepTwoContainer = props => {
       });
   };
 
-  // const putItem = () => {
-  //   dispatch({ type: ADD_ITEM_START });
-  //   putData()
-  //     .then(res => {
-  //       console.log(res);
-  //       const new_item = {
-  //         event_id: res.event_id,
-  //         id: res.id,
-  //         item_name: res.item_name,
-  //       };
-  //       dispatch({
-  //         type: ADD_ITEM_SUCCESS,
-  //         payload: new_item,
-  //       });
-  //       setEditing(false);
-  //       setButtonText('ADD ITEM');
-  //       resetForm();
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //       dispatch({ type: ADD_ITEM_ERROR, payload: err });
-  //     });
-  // };
+  const putItem = () => {
+    dispatch({ type: ADD_ITEM_START });
+    putData()
+      .then(res => {
+        console.log(res);
+        const new_item = {
+          event_id: res.event_id,
+          id: res.id,
+          item_name: res.item_name,
+        };
+        dispatch({
+          type: ADD_ITEM_SUCCESS,
+          payload: new_item,
+        });
+        setEditing(false);
+        setButtonText('ADD ITEM');
+        resetForm();
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: ADD_ITEM_ERROR, payload: err });
+      });
+  };
 
   const submit = e => {
     e.preventDefault();
-    // !editing ? postItem() : putItem();
+    !editing ? postItem() : putItem();
     postItem()
   };
 

@@ -52,7 +52,7 @@ const RenderStepTwo = (props) => {
                     >
                       X&nbsp;&nbsp;
                     </span>
-                    {item.item_name}
+                    {item.food_name}
                   </span>
                 </li>
               ))}
