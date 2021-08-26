@@ -21,3 +21,5 @@ export const useAPI = config => {
   // console.log('Here is useApi.js dataAPI', dataAPI)
   return [dataAPI, moveData, error];
 };
+
+//this component collects a base information to feed into axiosWithAuth

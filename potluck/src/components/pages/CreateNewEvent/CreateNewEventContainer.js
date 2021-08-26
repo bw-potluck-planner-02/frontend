@@ -15,17 +15,20 @@ import StepTwoContainer from "./StepTwo/StepTwoContainer";
 import StepThreeContainer from "./StepThree/StepThreeContainer";
 
 const initialFormValues = {
-  potluck_date: "",
   potluck_name: "",
-  address_one: "",
-  // address_two: '',
-  city: "",
-  state: "",
-  zip: "",
-  // contact_phone: '',
-  potluck_time: "",
-  // end_time: '',
   potluck_description: "",
+  potluck_date: "",
+  potluck_time: "",
+  potluck_location: "",
+  organizer: 0,
+  // address_one: "",
+  // address_two: '',
+  // city: "",
+  // state: "",
+  // zip: "",
+  // contact_phone: '',
+  // end_time: '',
+  
 };
 
 //step1 name, when, where
@@ -66,9 +69,9 @@ const CreateNewEvent = (props) => {
     url: "/api/potlucks",
     data: {
       ...values,
-      user_id: userState.user_id,
-
-      // //Event Address
+      // organizer: userState.user_id, 
+      organizer: 3,
+      //       // //Event Address
       // potluck_location: `${values.address_one}, ${values.city}, ${values.state}, ${values.zip}`,
 
       // //Event Details
@@ -78,8 +81,7 @@ const CreateNewEvent = (props) => {
       // potluck_description: values.potluck_description,
       
       // //backend ????
-      // organizer: 3,
-      
+      // organizer: 3,     
     },
   });
 
@@ -99,7 +101,7 @@ const CreateNewEvent = (props) => {
         console.log('PostEvent Resp: CreateNewEventContainer.js',res);
         const newEvent = {
           ...res,
-          event_id: res.id,
+          event_id: res.potluck_id,
           menu_items: [],
           guests: [],
         };

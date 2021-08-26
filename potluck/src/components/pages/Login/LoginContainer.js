@@ -90,9 +90,15 @@ const LoginPage = () => {
     data: values,
   });
 
+  const login = (e) => {
+    e.preventDefault();
+    postLogin();
+  };
+
   const postLogin = () => {
     dispatch({ type: USER_EVENT_START });
     moveData()
+    //the axios.post is obsolete code. See src/hooks/usrApi
       // axios.post('https://potluck-planner-2.herokuapp.com/api/auth/login', {username: "sue", password:"1234"})
       .then((res) => {
         // console.log("POST Login Resp:", res);
@@ -116,10 +122,7 @@ const LoginPage = () => {
       });
   };
 
-  const login = (e) => {
-    e.preventDefault();
-    postLogin();
-  };
+
 
   return (
     <>

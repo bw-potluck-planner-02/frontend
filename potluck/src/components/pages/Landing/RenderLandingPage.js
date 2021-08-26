@@ -69,13 +69,13 @@ function RenderLandingPage(props) {
                 dispatch({ type: USER_EVENT_ERROR, payload: err });
             });
     };
- 
+
     // const register = e => {
     //     e.preventDefault();
     //     // console.log(values);
     //     postRegister();
     // };
-   
+
     const clever = event => {
         // console.log('',event.target.name);
         // console.log('', event.target.value);
@@ -128,7 +128,7 @@ function RenderLandingPage(props) {
                                         value={values.username}
                                         onChange={clever}
                                     />
-                            {/* the following lines of code are for a later date ignore but leave it here */}
+                                    {/* the following lines of code are for a later date ignore but leave it here */}
                                     {/* <input
                                         type="text"
                                         required
