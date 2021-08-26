@@ -45,7 +45,7 @@ const StyledContainer = styled.div`
 `;
 
 const RenderCreateNewEventPage = (props) => {
-  console.log("PROPS for RednerCreateNewEvent", props.loading);
+  // console.log("PROPS for RednerCreateNewEvent", props.loading);
   return (
     <StyledContainer>
       <form onSubmit={props.submit}>

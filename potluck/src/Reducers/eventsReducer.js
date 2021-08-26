@@ -76,6 +76,7 @@ export const eventsReducer = (state = initialState, action) => {
         error: '',
       };
     case ADD_EVENT_SUCCESS:
+      console.log(action.payload)
       return {
         ...state,
         events: [...state.events, action.payload],

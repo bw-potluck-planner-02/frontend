@@ -10,7 +10,9 @@ const StyledDiv = styled.div`
   }
 `;
 
-const RenderStepTwo = (props) => (
+const RenderStepTwo = (props) => {
+  console.log(props)
+  return(
   <section>
     <form onSubmit={props.submit}>
       <div className="formContainer">
@@ -38,6 +40,7 @@ const RenderStepTwo = (props) => (
           <div>
             <ul>
               {props.state.map((item) => (
+                
                 <li key={item.id} onClick={() => props.editItem(item)}>
                   <span className="itemList">
                     <span
@@ -65,5 +68,5 @@ const RenderStepTwo = (props) => (
     </form>
   </section>
 );
-
+            }
 export default RenderStepTwo;

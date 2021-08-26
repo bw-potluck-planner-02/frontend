@@ -26,6 +26,7 @@ const StepTwoContainer = props => {
   const [values, handleChanges, resetForm, setValues] = useForm(
     initialFormValues
   );
+  console.log(eventsState)
   const [data, moveData, error] = useAPI({
     method: 'post',
     url: '/menu',
