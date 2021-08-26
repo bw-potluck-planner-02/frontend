@@ -137,7 +137,7 @@ const LoginPage = () => {
             <span className="navspans"></span>
             <Link to="/my-profile">My&nbsp;Profile</Link>
             <span className="navspans"></span>
-            <Link to="/help">Help</Link>
+            <Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link>
           </nav>
         </StyledHeader>
         <StyledMainPage>

@@ -59,7 +59,45 @@ const StyledHome = styled.div`
     font-size: 15px;
     color: #d9d9d9;
   }
-`;
+  @media (max-width: 500px) {
+      font-size: 14px;
+      #hide {
+          display: none;
+      }
+      .main {
+          margin-top: 40%;
+          height: 450px;
+          width: 200px;
+      }
+      nav {
+          width: 100%;
+      }
+      
+      .button-container {
+          margin-left: 13%;
+          width: 100%;
+      }
+  }
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+      #hide {
+          display: none;
+      }
+      .main {
+          margin-top: 40%;
+          height: 450px;
+          width: 500px;
+      }
+      nav {
+          width: 100%;
+      }
+      .button-container {
+          margin-left: 19%;
+          width: 100%;
+      }
+    }`
+;
 
 export default function Home() {
   const routeToPotluck = () => {};
@@ -67,7 +105,7 @@ export default function Home() {
   return (
     <StyledHome>
       <header>
-        <h1>POTLUCK PLANNER</h1>
+        <h1 id='hide'>POTLUCK PLANNER</h1>
         <nav>
           <span className="navspans">
             <Link to="/">Home</Link>
@@ -79,7 +117,7 @@ export default function Home() {
             <Link to="/my-profile">My Profile</Link>
           </span>
           <span className="navspans">
-            <Link to="/meet-team">Meet Our Team</Link>
+            <Link to="/meet-team">Meet&nbsp;Our&nbsp;Team</Link>
           </span>
         </nav>
       </header>
@@ -97,7 +135,7 @@ export default function Home() {
           <div className="button-container">
             <Link to="/landing">
               <button onlick={routeToPotluck} className="create-acctBtn">
-                Create an Account
+                Create&nbsp;an&nbsp;Account
               </button>
             </Link>
 
