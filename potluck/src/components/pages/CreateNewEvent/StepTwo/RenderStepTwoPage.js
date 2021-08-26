@@ -10,7 +10,10 @@ const StyledDiv = styled.div`
   }
 `;
 
-const RenderStepTwo = (props) => (
+const RenderStepTwo = (props) => {
+
+
+  return(
   <section>
     <form onSubmit={props.submit}>
       <div className="formContainer">
@@ -65,5 +68,5 @@ const RenderStepTwo = (props) => (
     </form>
   </section>
 );
-
+            }
 export default RenderStepTwo;
