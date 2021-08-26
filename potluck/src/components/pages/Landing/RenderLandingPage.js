@@ -3,27 +3,32 @@ import { Link, useHistory } from 'react-router-dom';
 import '../../../index.css';
 import { states } from '../../constants/index';
 import { useForm } from '../../hooks/useForm';
-import { useAPI } from '../../hooks/useAPI';
+// import { useAPI } from '../../hooks/useAPI';
+import { axiosWithAuth } from '../../../utils/axiosWithAuth';
 import { useSelector, useDispatch } from 'react-redux';
-import Dropdown from '../../DropDown';
+// import Dropdown from '../../DropDown';
 import {
     USER_EVENT_START,
     USER_EVENT_SUCCESS,
     USER_EVENT_ERROR,
 } from '../../../Reducers/userReducer';
 import StyledRegistration from './Styling';
+import axios from 'axios';
+
 
 
 const initialFormValues = {
-    first_name: '',
-    last_name: '',
-    email: '',
-    address_one: '',
-    address_two: '',
-    city: '',
-    state: '',
-    zip: '',
-    password: '',
+    // first_name: '',
+    // last_name: '',
+    // email: '',
+    // address_one: '',
+    // address_two: '',
+    // city: '',
+    // state: '',
+    // zip: '',
+    // password: '',
+    username: "",
+    password: ""
 };
 
 function RenderLandingPage(props) {
@@ -32,19 +37,24 @@ function RenderLandingPage(props) {
 
     const dispatch = useDispatch();
     const state = useSelector(state => state.userReducer);
-    const [values, handleChanges, resetForm] = useForm(initialFormValues);
+    const [setValues, values, handleChanges, resetForm] = useForm(initialFormValues);
+    const [anyValue, setAnyvalue] = useState("");
     let history = useHistory();
-    const [data, moveData, error] = useAPI({
-        method: 'post',
-        url: '/user/register',
-        data: values,
-    });
+    // const [data, moveData, error] = useAPI({
+    //     method: 'post',
+    //     url: '/user/register',
+    //     data: anyValue,
+
+    // });
+
+
 
     const postRegister = () => {
-        dispatch({ type: USER_EVENT_START });
-        moveData()
+        // dispatch({ type: USER_EVENT_START });
+        axios
+            .post('https://potluck-planner-2.herokuapp.com/api/auth/register', anyValue)
             .then(res => {
-                console.log(res);
+                console.log("XXXX SEE ME XXXX", res);
                 localStorage.setItem('token', res.token);
                 dispatch({
                     type: USER_EVENT_SUCCESS,
@@ -59,15 +69,27 @@ function RenderLandingPage(props) {
                 dispatch({ type: USER_EVENT_ERROR, payload: err });
             });
     };
-
-    const register = e => {
-        e.preventDefault();
-        // console.log(values);
-        postRegister();
+ 
+    // const register = e => {
+    //     e.preventDefault();
+    //     // console.log(values);
+    //     postRegister();
+    // };
+   
+    const clever = event => {
+        // console.log('',event.target.name);
+        // console.log('', event.target.value);
+        setAnyvalue({
+            ...anyValue,
+            [event.target.name]: event.target.value
+        });
     };
+    console.log('clever HERE: ', anyValue);
     return (
+
         <>
             <div className="page">
+
                 <header>
                     <h1>POTLUCK PLANNER</h1>
                     <nav>
@@ -82,27 +104,31 @@ function RenderLandingPage(props) {
                 </header>
 
                 <StyledRegistration>
+
                     <div className="introduction">
+
                         <h1>Welcome to Potluck Planner</h1>
+
                         <p>
                             an easy way to figure out
                             who’s bringing what to your next potluck
                         </p>
-                        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt='potluck table'/>
+                        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt='potluck table' />
                     </div>
                     <div className="form">
                         <section>
                             <h2>Create an Account to Get Started!</h2>
-                            <form onSubmit={register}>
-                                <div>
+                            <div>
+                                <form>
                                     <input
                                         type="text"
                                         required
                                         name="username"
                                         placeholder="User name"
                                         value={values.username}
-                                        onChange={handleChanges}
+                                        onChange={clever}
                                     />
+                            {/* the following lines of code are for a later date ignore but leave it here */}
                                     {/* <input
                                         type="text"
                                         required
@@ -111,8 +137,8 @@ function RenderLandingPage(props) {
                                         value={values.last_name}
                                         onChange={handleChanges}
                                     /> */}
-                                </div>
-                                {/* <div>
+
+                                    {/* <div>
                                     <input
                                         type="email"
                                         name="email"
@@ -123,21 +149,21 @@ function RenderLandingPage(props) {
                                 </div> */}
 
                                     {/* <div className='input-box'> */}
-                                        {/* <input
+                                    {/* <input
                                             type="text"
                                             name="address_one"
                                             placeholder="Address 1"
                                             value={values.address_one}
                                             onChange={handleChanges}
                                         /> */}
-                                        {/* <input
+                                    {/* <input
                                             type="text"
                                             name="address_two"
                                             placeholder="Address 2"
                                             value={values.address_two}
                                             onChange={handleChanges}
                                         /> */}
-                                        {/* <input
+                                    {/* <input
                                             type="text"
                                             name="city"
                                             placeholder="City"
@@ -158,27 +184,32 @@ function RenderLandingPage(props) {
                                         value={values.state}
                                         onChange={handleChanges}
                                     /> */}
-                                {/* </div> */}
+                                    {/* </div> */}
 
                                     {/* <div className='input-box'> */}
-                                        <input
-                                            type="password"
-                                            name="password"
-                                            placeholder="password"
-                                            value={values.password}
-                                            onChange={handleChanges}
-                                        />
-                                    
-                                    
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="password"
+                                        value={values.password}
+                                        onChange={clever}
+                                    />
 
-                                        {!state.loading ? (
-                                            <button>CREATE MY ACCOUNT</button>
-                                        ) : (
-                                            <button disabled>Loading...</button>
-                                        )}
-                                    {/* </div> */}
+                                    {/* the code below is an alternative to Yup and is very tricky. 
+                                    It ONLY takes STRINGS it will disable all buttons if the form inputs are not strings. 
+                                    DO NOT USE this unless you fully understand my /loading component.  */}
+
+                                    {/* {!state.loading ? (
+                                    <button onClick={()=>somedam}>CREATE MY ACCOUNT</button>
+                                ) : (
+                                    <button disabled>Loading...</button>
+                                )} */}
+
                                 </form>
-                            {/* </div> */}
+
+                            </div>
+                            <button onClick={postRegister}>CREATE MY ACCOUNT</button>
+
 
                         </section>
                     </div>
