@@ -47,16 +47,18 @@ const StepTwoContainer = props => {
     dispatch({ type: ADD_ITEM_START });
     moveData()
       .then(res => {
-        console.log('response',res)
+        console.log('Food Added response',res)
         const new_item = {
-          event_id: res.event_id,
-          id: res.id,
-          item_name: res.item_name,
+          food_id: res.food_id,
+          potluck_id: res.potluck.id,
+          food_name: res.food_name,
         };
+        console.log('new_item', new_item);
         dispatch({
           type: ADD_ITEM_SUCCESS,
           payload: new_item,
         });
+        console.log('StepTwo eventsState', eventsState);
         resetForm();
       })
       .catch(err => {
