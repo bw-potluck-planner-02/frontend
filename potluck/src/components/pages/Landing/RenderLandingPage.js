@@ -125,7 +125,7 @@ function RenderLandingPage(props) {
                                         required
                                         name="username"
                                         placeholder="User name"
-                                        value={values.username}
+                                        value={anyValue.username}
                                         onChange={clever}
                                     />
                                     {/* the following lines of code are for a later date ignore but leave it here */}
@@ -191,7 +191,7 @@ function RenderLandingPage(props) {
                                         type="password"
                                         name="password"
                                         placeholder="password"
-                                        value={values.password}
+                                        value={anyValue.password}
                                         onChange={clever}
                                     />
 
