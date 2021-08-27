@@ -116,7 +116,7 @@ export default function Team() {
                 <div className='card'>
                     <img
                     className='card-photo'
-                    src='https://picsum.photos/300'
+                    src='https://picsum.photos/303'
                     alt='profile of jonah'
                     />
                     <h2>Jonah Tillman</h2>
