@@ -134,13 +134,13 @@ export default function Home() {
           </h1>
           <div className="button-container">
             <Link to="/landing">
-              <button onlick={routeToPotluck} className="create-acctBtn">
+              <button onClick={routeToPotluck} className="create-acctBtn">
                 Create&nbsp;an&nbsp;Account
               </button>
             </Link>
 
             <Link to="/login">
-              <button onlick={routeToPotluck} className="loginBtn">
+              <button onClick={routeToPotluck} className="loginBtn">
                 Login
               </button>
             </Link>

@@ -102,7 +102,7 @@ export default function Team() {
                     alt='profile pic of tranequa'
                     />
                     <h2>TraNequa Fauntleroy</h2>
-                    <h3>Frontend</h3>
+                    <h3>Frontend UI Development</h3>
                 </div>
                 <div className='card'>
                     <img
@@ -111,18 +111,19 @@ export default function Team() {
                     alt='profile pic for monica'
                     />
                     <h2>Monica Salas</h2>
-                    <h3>Frontend</h3>
+                    <h3>Frontend UI Development</h3>
 
                 </div>
                 <div className='card'>
                     <img
                     className='card-photo'
-                    src='https://picsum.photos/301'
+                    src='https://ca.slack-edge.com/ESZCHB482-U024A8UD2AE-816de42995b0-512'
                     alt='profile of jonah'
                     />
                     <h2>Jonah Tillman</h2>
-                    <h3>Frontend</h3>
+                    <h3>Frontend UI Development</h3>
                 </div>
+
                 <div className='card'>
                     <img
                     className='card-photo'
@@ -130,17 +131,21 @@ export default function Team() {
                     alt='profile pic for rick'
                     />
                     <h2>Rick Mansfield</h2>
-                    <h3>Connected Frontend and Backend</h3>
+                    <h3>Full Stack Developer | Fontend Team Lead</h3>
+                    {/* <h3>Connected Frontend UI and Backend Database</h3>
+                    <h3>Create Base Organization/Repositories on GitHub</h3>
+                    <h3>Set up initial React Project and File Structure</h3>
+                    <h3>Create CRUD applications for functionality</h3> */}
                 </div>
+
                 <div className='card'>
                     <img
                     className='card-photo'
-
-
                     src='https://media-exp1.licdn.com/dms/image/C4E03AQF0DE28x4egLw/profile-displayphoto-shrink_400_400/0/1623124870817?e=1635379200&v=beta&t=xyU88yXd6iD3WRte4GqzgrgbUdQGTHuv_Ir9yymewkU'
                     alt='profile-pic'
                     />
                     <h2>Dharmik Savaliya</h2>
+<<<<<<< HEAD
                     <h3>Connected Frontend and Backend</h3>
 
                    
@@ -152,6 +157,9 @@ export default function Team() {
                     <h2>Dharmik Savaliya</h2>
                     <h3>Backend</h3>
 
+=======
+                    <h3>Roel: Full Stack Developement coordination</h3>
+>>>>>>> 8548163833a6d0f550177e3f9ab72e808093c05c
                 </div>
                 <div className='card'>
                     <img
@@ -160,13 +168,7 @@ export default function Team() {
                     alt='profile-pic'
                     />
                     <h2>Derek Oh</h2>
-                    <h3>Backend</h3>
-
-
-                    
-                    <h3>Role of team member</h3>
-
-
+                    <h3>Frontend Developer</h3>
                 </div>
                 <div className='card'>
                     <img
@@ -175,7 +177,7 @@ export default function Team() {
                     alt='profile pic for connor'
                     />
                     <h2>Connor Rayburn</h2>
-                    <h3>Backend</h3>
+                    <h3>Backend Database Developement</h3>
                 </div>
                 <div className='card'>
                     <img
@@ -184,7 +186,7 @@ export default function Team() {
                     alt='profile pic for amanuel'
                     />
                     <h2>Amanuel Gilay</h2>
-                    <h3>Backend</h3>
+                    <h3>Backend Database Developement</h3>
                 </div>
                 <div className='card'>
                     <img
@@ -193,7 +195,7 @@ export default function Team() {
                     alt='profile pic for cara'
                     />
                     <h2>Cara Locke</h2>
-                    <h3>Assisted with Backend</h3>
+                    <h3>Full Stack Consultant</h3>
                 </div>
             </div>
         </div>
