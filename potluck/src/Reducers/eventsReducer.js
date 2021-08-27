@@ -141,16 +141,13 @@ export const eventsReducer = (state = initialState, action) => {
         ...state,
         events: state.events.map(event => {
           if (event.event_id === state.currentEvent.id) {
-            console.log('if trigred')
             return {
               ...event,
               menu_items: event.menu_items.filter(
                 item => item.id !== action.payload
-                
               ),
             };
           } else {
-            console.log('else triggred')
             return {
               ...event,
 
@@ -160,7 +157,7 @@ export const eventsReducer = (state = initialState, action) => {
         
         currentEvent: {
         menu_items: state.currentEvent.menu_items.filter(
-            item => (console.log('maru che',item), item.id !== action.payload.food_id
+            item => ( item.id !== action.payload.food_id
             )
           ),
         },

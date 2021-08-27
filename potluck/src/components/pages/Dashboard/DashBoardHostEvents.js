@@ -23,7 +23,7 @@ const DashboardHost = () => {
         url: '/api/potlucks',
         data: {},
     });
-
+console.log(eventsState)
     useEffect(() => {
         dispatch({ type: FETCH_DATA_START });
         moveData()
@@ -67,7 +67,7 @@ const DashboardHost = () => {
                                 className="delete"
                                 onClick={e => {
                                     e.stopPropagation();
-                                    deleteEvent(event);
+                                    deleteEvent(event.event_id);
                                 }}
                             >
                                 X&nbsp;&nbsp;

@@ -109,7 +109,7 @@ const StepTwoContainer = props => {
   };
 
   const deleteItem = id => {
-    console.log("id", id)
+    
     axiosWithAuth()
       .delete(`api/foods/${id}`)
       .then(res => {
