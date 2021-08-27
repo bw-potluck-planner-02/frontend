@@ -144,8 +144,15 @@ export default function Team() {
                     src='https://media-exp1.licdn.com/dms/image/C4E03AQF0DE28x4egLw/profile-displayphoto-shrink_400_400/0/1623124870817?e=1635379200&v=beta&t=xyU88yXd6iD3WRte4GqzgrgbUdQGTHuv_Ir9yymewkU'
                     alt='profile-pic'
                     />
+                    
+
+                    
                     <h2>Dharmik Savaliya</h2>
-                    <h3>Roel: Full Stack Developement coordination</h3>
+                    
+
+
+                    <h3>Full Stack Developement coordination</h3>
+
                 </div>
                 <div className='card'>
                     <img
