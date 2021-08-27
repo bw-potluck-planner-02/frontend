@@ -118,9 +118,13 @@ const LoginPage = () => {
   };
 
   const login = (e) => {
+<<<<<<< HEAD
+  
+=======
     if (initialFormValues.username === '' || initialFormValues.password === '') {
       setError('Both fields are required')
     }
+>>>>>>> 999335c3a805ba55493cd5c0e150c2c6a2a53e43
     e.preventDefault();
     postLogin();
   };
