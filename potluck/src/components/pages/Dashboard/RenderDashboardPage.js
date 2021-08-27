@@ -107,7 +107,6 @@ function RenderDashboardPage() {
       </header>
       <MainDiv className="page">
         <div className="content-container">
-          {/*Going to update next div with classname "dashboard-container" that should increase font add colors, waiting until its complete*/}
           <div className="dashboard-container">
             <div className="formColumn">
               {!eventsState.editing ? (

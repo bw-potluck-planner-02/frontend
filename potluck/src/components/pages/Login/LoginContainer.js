@@ -81,6 +81,7 @@ const StyledInputs = styled.div`
 `;
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const [errors, setError] = useState(initialFormValues)
   const state = useSelector((state) => state.userReducer);
   const [values, handleChanges, resetForm] = useForm(initialFormValues);
   let history = useHistory();
@@ -117,7 +118,13 @@ const LoginPage = () => {
   };
 
   const login = (e) => {
+<<<<<<< HEAD
   
+=======
+    if (initialFormValues.username === '' || initialFormValues.password === '') {
+      setError('Both fields are required')
+    }
+>>>>>>> 999335c3a805ba55493cd5c0e150c2c6a2a53e43
     e.preventDefault();
     postLogin();
   };

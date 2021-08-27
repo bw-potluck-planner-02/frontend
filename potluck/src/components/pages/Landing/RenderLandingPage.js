@@ -54,13 +54,13 @@ function RenderLandingPage(props) {
         axios
             .post('https://potluck-planner-2.herokuapp.com/api/auth/register', anyValue)
             .then(res => {
-                console.log("XXXX SEE ME XXXX", res);
+                // console.log("XXXX SEE ME XXXX", res);
                 localStorage.setItem('token', res.token);
                 dispatch({
                     type: USER_EVENT_SUCCESS,
                     payload: res.user,
                 });
-                console.log(state);
+                // console.log(state);
                 history.push('/dashboard');
                 resetForm();
             })
@@ -69,13 +69,13 @@ function RenderLandingPage(props) {
                 dispatch({ type: USER_EVENT_ERROR, payload: err });
             });
     };
- 
+
     // const register = e => {
     //     e.preventDefault();
     //     // console.log(values);
     //     postRegister();
     // };
-   
+
     const clever = event => {
         // console.log('',event.target.name);
         // console.log('', event.target.value);
@@ -84,7 +84,7 @@ function RenderLandingPage(props) {
             [event.target.name]: event.target.value
         });
     };
-    console.log('clever HERE: ', anyValue);
+    // console.log('clever HERE: ', anyValue);
     return (
 
         <>
@@ -97,7 +97,7 @@ function RenderLandingPage(props) {
                         <span className="navspans"></span>
                         <Link to="/dashboard">DashBoard</Link>
                         <span className="navspans"></span>
-                        <Link to="/my-profile">My Profile</Link>
+                        <Link to="/my-profile">My&nbsp;Profile</Link>
                         <span className="navspans"></span>
                         <Link to="/meet-team">Meet&nbsp;our&nbsp;Team</Link>
                     </nav>
@@ -128,7 +128,7 @@ function RenderLandingPage(props) {
                                         value={values.username}
                                         onChange={clever}
                                     />
-                            {/* the following lines of code are for a later date ignore but leave it here */}
+                                    {/* the following lines of code are for a later date ignore but leave it here */}
                                     {/* <input
                                         type="text"
                                         required

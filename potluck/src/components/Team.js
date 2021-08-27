@@ -112,11 +112,12 @@ export default function Team() {
                     />
                     <h2>Monica Salas</h2>
                     <h3>Frontend</h3>
+
                 </div>
                 <div className='card'>
                     <img
                     className='card-photo'
-                    src='https://picsum.photos/303'
+                    src='https://picsum.photos/301'
                     alt='profile of jonah'
                     />
                     <h2>Jonah Tillman</h2>
@@ -146,7 +147,7 @@ export default function Team() {
                     src='https://picsum.photos/302'
                     alt='profile-pic'
                     />
-                    <h2>Derek-Oh</h2>
+                    <h2>Derek Oh</h2>
                     <h3>Backend</h3>
                 </div>
                 <div className='card'>
