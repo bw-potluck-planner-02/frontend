@@ -18,12 +18,12 @@ const DashboardHost = () => {
     const eventsState = useSelector(state => state.eventsReducer);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [data, moveData, error] = useAPI({
+    const [moveData] = useAPI({
         method: 'get',
         url: '/api/potlucks',
         data: {},
     });
-
+console.log(eventsState)
     useEffect(() => {
         dispatch({ type: FETCH_DATA_START });
         moveData()
@@ -67,7 +67,7 @@ const DashboardHost = () => {
                                 className="delete"
                                 onClick={e => {
                                     e.stopPropagation();
-                                    deleteEvent(event);
+                                    deleteEvent(event.event_id);
                                 }}
                             >
                                 X&nbsp;&nbsp;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
 
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
   USER_EVENT_ERROR,
 } from "../../../Reducers/userReducer";
 import { SET_CURRENT_USER } from "../../../Reducers/eventsReducer";
-import axios from "axios";
+
 
 const initialFormValues = {
   username: "",
@@ -85,7 +85,7 @@ const LoginPage = () => {
   const state = useSelector((state) => state.userReducer);
   const [values, handleChanges, resetForm] = useForm(initialFormValues);
   let history = useHistory();
-  const [data, moveData, error] = useAPI({
+  const [moveData] = useAPI({
     method: "post",
     url: "/api/auth/login",
     data: values,

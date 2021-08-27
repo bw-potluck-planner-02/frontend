@@ -28,7 +28,7 @@ const StepThreeContainer = props => {
   const [values, handleChanges, resetForm, setValues] = useForm(
     initialFormValues
   );
-  const [data, moveData, error] = useAPI({
+  const [moveData] = useAPI({
     method: 'post',
     url: '/guest',
     data: {
@@ -37,7 +37,7 @@ const StepThreeContainer = props => {
       event_id: eventsState.currentEvent.id,
     },
   });
-  const [dataPut, putData, errorPut] = useAPI({
+  const [ putData] = useAPI({
     method: 'put',
     url: `/guest/${editID}`,
     data: {

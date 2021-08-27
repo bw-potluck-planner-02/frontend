@@ -27,7 +27,8 @@ const StepTwoContainer = props => {
   const [values, handleChanges, resetForm, setValues] = useForm(
     initialFormValues
   );
-  const [data, moveData, error] = useAPI({
+  // console.log('StepTwo eventsState', eventsState);
+  const [moveData] = useAPI({
     method: 'post',
     url: '/api/foods ',
     data: {
@@ -35,9 +36,9 @@ const StepTwoContainer = props => {
       food_description:"",
     },
   });
-  const [dataPut, putData, errorPut] = useAPI({
+  const [putData] = useAPI({
     method: 'put',
-    url: `/menu/${editID}`,
+    url: `/api/foods/${editID}`,
     data: {
       item_name: values.item_name,
     },
@@ -58,7 +59,7 @@ const StepTwoContainer = props => {
           type: ADD_ITEM_SUCCESS,
           payload: new_item,
         });
-        console.log('StepTwo eventsState', eventsState);
+        // console.log('StepTwo eventsState', eventsState);
         resetForm();
       })
       .catch(err => {
@@ -67,33 +68,33 @@ const StepTwoContainer = props => {
       });
   };
 
-  const putItem = () => {
-    dispatch({ type: ADD_ITEM_START });
-    putData()
-      .then(res => {
-        console.log(res);
-        const new_item = {
-          event_id: res.event_id,
-          id: res.id,
-          item_name: res.item_name,
-        };
-        dispatch({
-          type: ADD_ITEM_SUCCESS,
-          payload: new_item,
-        });
-        setEditing(false);
-        setButtonText('ADD ITEM');
-        resetForm();
-      })
-      .catch(err => {
-        console.log(err);
-        dispatch({ type: ADD_ITEM_ERROR, payload: err });
-      });
-  };
+  // const putItem = () => {
+  //   dispatch({ type: ADD_ITEM_START });
+  //   putData()
+  //     .then(res => {
+  //       console.log('pu res',res);
+  //       const new_item = {
+  //         event_id: res.event_id,
+  //         id: res.id,
+  //         item_name: res.item_name,
+  //       };
+  //       dispatch({
+  //         type: ADD_ITEM_SUCCESS,
+  //         payload: new_item,
+  //       });
+  //       setEditing(false);
+  //       setButtonText('ADD ITEM');
+  //       resetForm();
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       dispatch({ type: ADD_ITEM_ERROR, payload: err });
+  //     });
+  // };
 
   const submit = e => {
     e.preventDefault();
-    !editing ? postItem() : putItem();
+    // !editing ? postItem() : putItem();
     postItem()
   };
 
@@ -107,11 +108,13 @@ const StepTwoContainer = props => {
     });
   };
 
-  const deleteItem = e => {
+  const deleteItem = id => {
+    
     axiosWithAuth()
-      .delete(`/menu/${e}`)
+      .delete(`api/foods/${id}`)
       .then(res => {
-        dispatch({ type: DELETE_ITEM, payload: e });
+        console.log('response',res)
+        dispatch({ type: DELETE_ITEM, payload: id });
       })
       .catch(err => {
         console.log(err);

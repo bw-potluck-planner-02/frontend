@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Dropdown from "../../../components/DropDown";
-import { states } from "../../../components/constants/index";
+// import Dropdown from "../../../components/DropDown";
+// import { states } from "../../../components/constants/index";
 
 const StyledContainer = styled.div`
   form {

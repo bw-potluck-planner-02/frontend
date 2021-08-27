@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../../../components/hooks/useForm";
@@ -9,7 +9,7 @@ import {
   ADD_EVENT_SUCCESS,
   ADD_EVENT_ERROR,
   EDIT_EVENT_SUCCESS,
-  eventsReducer,
+  
 } from "../../../Reducers/eventsReducer";
 import RenderCreateNewEventPage from "./RenderCreateNewEventPage";
 import StepTwoContainer from "./StepTwo/StepTwoContainer";
@@ -60,14 +60,14 @@ const CreateNewEvent = (props) => {
   const eventsState = useSelector((state) => state.eventsReducer);
   const history = useHistory();
   const buttonText = eventsState.editEvent ? "SAVE" : "NEXT STEP";
-  const [values, handleChanges, resetForm, setValues] = useForm(
+  const [values, handleChanges] = useForm(
     eventsState.editEvent ? eventsState.currentEvent[0] : initialFormValues
   );
   // console.log(userState)
   // console.log(eventsState)
   const [currentStep, setCurrentStep] = useState("");
   const dispatch = useDispatch();
-  const [data, moveData, error] = useAPI({
+  const [moveData] = useAPI({
     method: "post",
     url: "/api/potlucks",
     data: {
@@ -76,7 +76,7 @@ const CreateNewEvent = (props) => {
     },
   });
 
-  const [dataPut, putData, errorPut] = useAPI({
+  const [putData] = useAPI({
     method: "put",
     url: `/api/potlucks/:id${eventsState.currentEventID}`,
     data: {

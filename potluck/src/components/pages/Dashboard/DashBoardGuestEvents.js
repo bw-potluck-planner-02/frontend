@@ -1,12 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { TOGGLE_EDITING } from "";
 
 const DashboardGuest = () => {
-  const eventsState = useSelector((state) => state.eventsReducer);
+  // const eventsState = useSelector((state) => state.eventsReducer);
   const history = useHistory();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const rsvp = () => {
     // dispatch({ type: TOGGLE_EDITING });

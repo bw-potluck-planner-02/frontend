@@ -76,6 +76,7 @@ export const eventsReducer = (state = initialState, action) => {
         error: '',
       };
     case ADD_EVENT_SUCCESS:
+      console.log(action.payload)
       return {
         ...state,
         events: [...state.events, action.payload],
@@ -135,6 +136,7 @@ export const eventsReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case DELETE_ITEM:
+      console.log(state.currentEvent)
       return {
         ...state,
         events: state.events.map(event => {
@@ -148,13 +150,15 @@ export const eventsReducer = (state = initialState, action) => {
           } else {
             return {
               ...event,
+
             };
           }
         }),
+        
         currentEvent: {
-          ...state.currentEvent,
-          menu_items: state.currentEvent.menu_items.filter(
-            item => item.id !== action.payload
+        menu_items: state.currentEvent.menu_items.filter(
+            item => ( item.id !== action.payload.food_id
+            )
           ),
         },
       };

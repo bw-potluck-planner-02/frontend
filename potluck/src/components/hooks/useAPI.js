@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 export const useAPI = config => {
-  const [dataAPI, setData] = useState('');
-  const [error, setError] = useState('');
+  // const [dataAPI, setData] = useState('');
+  // const [error, setError] = useState('');
   const { method, url, data } = config;
 
   const moveData = () => {
@@ -19,7 +19,7 @@ export const useAPI = config => {
       });
   };
   // console.log('Here is useApi.js dataAPI', dataAPI)
-  return [dataAPI, moveData, error];
+  return [ moveData];
 };
 
 //this component collects a base information to feed into axiosWithAuth

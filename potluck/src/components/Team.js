@@ -135,11 +135,25 @@ export default function Team() {
                 <div className='card'>
                     <img
                     className='card-photo'
+
+
+                    src='https://media-exp1.licdn.com/dms/image/C4E03AQF0DE28x4egLw/profile-displayphoto-shrink_400_400/0/1623124870817?e=1635379200&v=beta&t=xyU88yXd6iD3WRte4GqzgrgbUdQGTHuv_Ir9yymewkU'
+                    alt='profile-pic'
+                    />
+                    <h2>Dharmik Savaliya</h2>
+                    <h3>Connected Frontend and Backend</h3>
+
+                   
+                    
+                    <h3>Role of team member</h3>
+
+
                     src='https://picsum.photos/301'
                     alt='profile-pic'
                     />
                     <h2>Dharmik Savaliya</h2>
                     <h3>Backend</h3>
+
                 </div>
                 <div className='card'>
                     <img
@@ -149,6 +163,12 @@ export default function Team() {
                     />
                     <h2>Derek Oh</h2>
                     <h3>Backend</h3>
+
+
+                    
+                    <h3>Role of team member</h3>
+
+
                 </div>
                 <div className='card'>
                     <img
