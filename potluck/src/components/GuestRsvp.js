@@ -68,8 +68,8 @@ const initialFormValues = {
 const GuestRsvp = () => {
   const eventsState = useSelector(state => state.eventsReducer);
   const dispatch = useDispatch();
-  const [values, handleChanges, resetForm] = useForm(initialFormValues);
-  const [data, moveData, error] = useAPI({
+  const [values, handleChanges] = useForm(initialFormValues);
+  const [moveData] = useAPI({
     method: 'get',
     url: '/event/163',
     data: {},

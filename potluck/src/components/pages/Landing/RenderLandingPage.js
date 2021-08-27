@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../../../index.css';
-import { states } from '../../constants/index';
+// import { states } from '../../constants/index';
 import { useForm } from '../../hooks/useForm';
 // import { useAPI } from '../../hooks/useAPI';
-import { axiosWithAuth } from '../../../utils/axiosWithAuth';
-import { useSelector, useDispatch } from 'react-redux';
+// import { axiosWithAuth } from '../../../utils/axiosWithAuth';
+import { useDispatch } from 'react-redux';
 // import Dropdown from '../../DropDown';
 import {
-    USER_EVENT_START,
+    
     USER_EVENT_SUCCESS,
     USER_EVENT_ERROR,
 } from '../../../Reducers/userReducer';
@@ -36,8 +36,8 @@ function RenderLandingPage(props) {
     // when you have handled the token, navigate to the Login route
 
     const dispatch = useDispatch();
-    const state = useSelector(state => state.userReducer);
-    const [setValues, values, handleChanges, resetForm] = useForm(initialFormValues);
+    // const state = useSelector(state => state.userReducer);
+    const [values, resetForm] = useForm(initialFormValues);
     const [anyValue, setAnyvalue] = useState("");
     let history = useHistory();
     // const [data, moveData, error] = useAPI({

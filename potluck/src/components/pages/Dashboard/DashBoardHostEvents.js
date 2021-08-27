@@ -18,7 +18,7 @@ const DashboardHost = () => {
     const eventsState = useSelector(state => state.eventsReducer);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [data, moveData, error] = useAPI({
+    const [moveData] = useAPI({
         method: 'get',
         url: '/api/potlucks',
         data: {},

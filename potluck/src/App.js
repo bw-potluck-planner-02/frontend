@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import PrivateRoute from "./utils/Private.js";
 import LoginPage from "./components/pages/Login/LoginContainer";
@@ -10,10 +10,10 @@ import Team from "./components/Team";
 import MyProfilePage from "./components/pages/MyProfile/RenderMyProfilePage";
 import DashboardPage from "./components/pages/Dashboard/RenderDashboardPage";
 
-const logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "login";
-};
+// const logout = () => {
+//   localStorage.removeItem("token");
+//   window.location.href = "login";
+// };
 
 const StyledBody = styled.div`
   background-color: ${({ theme }) => theme.secondaryColor};
