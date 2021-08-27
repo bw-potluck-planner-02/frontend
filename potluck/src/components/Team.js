@@ -137,7 +137,7 @@ export default function Team() {
                     src='https://picsum.photos/301'
                     alt='profile-pic'
                     />
-                    <h2>Dharmik</h2>
+                    <h2>Dharmik Savaliya</h2>
                     <h3>Backend</h3>
                 </div>
                 <div className='card'>
