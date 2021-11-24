@@ -1,9 +1,18 @@
-# Getting Started with Create React App
+# Getting Started Poltluck Planner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visit Live Site 
 
-- [Getting Started with Create React App](#getting-started-with-create-react-app)
-  - [Available Scripts](#available-scripts)
+- [LINK](https://potluck082021.vercel.app/)
+![image](../potluck-planner/src/assets/Images/Login-background.jpg)
+
+
+- [Getting Started Poltluck Planner](#getting-started-poltluck-planner)
+  - [Visit Live Site](#visit-live-site)
+  - [About](#about)
+  - [Language](#language)
+  - [Contributors](#contributors)
+  - [Fast Instructions fro running this project](#fast-instructions-fro-running-this-project)
+  - [General Instructions for React Apps](#general-instructions-for-react-apps)
     - [`npm start`](#npm-start)
     - [`npm test`](#npm-test)
     - [`npm run build`](#npm-run-build)
@@ -15,9 +24,35 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - [Advanced Configuration](#advanced-configuration)
     - [Deployment](#deployment)
     - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
-  - [Themed Styles added note](#themed-styles-added-note)
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About 
+Tired of getting too many chips and not enought meats at your Pot Luck? No Worries, our app helps you create potlucks, invite guests and ensure no duplicate foods. 
+
+## Language
+We love JavaScript and React makes it easy. We are thrilled with Redux and the reducer pattern as part of our code design. The use of these tools enables follow up developers a base with which to scale up as needed. 
+
+## Contributors
+- Rick Mansfield [Lead Backend Developer](https://rickmansfield.github.io/PortfolioWRM2021v2/)
+- Jared Hall [Full Stack Web Dev & Computer Science Engineer]()
+- Richard Perry [Full Stack Web Dev & Computer Science Engineer]()
+- Collyn Godlewski [Frontend Development REACT/SPA's & Design]()
+- Erik Bahena [Frontend Development REACT/SPA's & Design]()
+
+## Fast Instructions fro running this project
+  - You need React and Node.js on your local environment. 
+  - clone project
+  - in terminal ```npm install```
+  - then ```npm start```
+  - find all necesssary imports at the top of each file. Be sure you load...
+    -  npm i Yup
+    -  npm i styled-components
+    -  npm i axios
+    -  npm i react-router-dom
+    -  npm i bootstrap
+  - Above all Have Fun!
+## General Instructions for React Apps
 
 In the project directory, you can run:
 
@@ -83,6 +118,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
- 
- ## Themed Styles added note
-    - be sure you all redownload npm i styled-components to your terminal I've cranked them up ~ Jonah. 
+q
